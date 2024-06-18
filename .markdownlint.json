@@ -1,0 +1,9 @@
+{
+  "default": false,
+  "MD001": true,
+  "first-line-heading": true,
+  "atx_closed": true,
+  "line-length": false,
+  "no-multiple-blanks": false,
+  "list-marker-space": false
+}

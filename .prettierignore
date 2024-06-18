@@ -1,0 +1,13 @@
+.next
+.cache
+.DS_Store
+*.local
+dist
+dist-ssr
+package-lock.json
+pnpm-lock.yaml
+public
+node_modules
+next-env.d.ts
+next.config.ts
+yarn.lock

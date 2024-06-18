@@ -1,0 +1,13 @@
+{
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "strict",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "tailwindConfig": "./tailwind.config.ts",
+  "trailingComma": "es5",
+  "useTabs": false
+}
