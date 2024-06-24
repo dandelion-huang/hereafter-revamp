@@ -35,15 +35,23 @@
     ]
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
+    "i18next": "^23.11.5",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-resources-to-backend": "^1.2.1",
+    "negotiator": "^0.6.3",
     "next": "14.2.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-cookie": "^7.1.4",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^14.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/cz-commitlint": "^19.2.0",
-    "@types/node": "^20.14.2",
+    "@types/negotiator": "^0.6.3",
+    "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -64,7 +72,7 @@
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "stylelint": "^16.6.1",
-    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-recommended": "^14.0.1",
     "stylelint-order": "^6.0.4",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
