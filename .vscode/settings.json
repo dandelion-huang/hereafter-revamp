@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "i18n-ally.displayLanguage": "en-US",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["i18n/locales"],
+  "i18n-ally.sourceLanguage": "en-US",
+  "json.schemaDownload.enable": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#362B23",
+    "titleBar.activeBackground": "#4C3C32",
+    "titleBar.activeForeground": "#FCFBFB"
+  }
+}
