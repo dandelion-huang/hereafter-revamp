@@ -1,0 +1,5 @@
+/* disable overscroll (scroll bouncing) */
+/* safari is not supported */
+body {
+  overscroll-behavior: none;
+}
