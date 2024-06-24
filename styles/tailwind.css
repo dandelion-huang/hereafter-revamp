@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-rgb: 0, 0, 0;
+  --white-rgb: 255, 255, 255;
+  --transparent-rgba: 0, 0, 0, 0;
+  --primary-rgb: 227, 132, 242;
+  --secondary-rgb: 149, 135, 225;
+  --action-rgb: 206, 89, 231;
+  --alert-rgb: 255, 82, 186;
+  --disabled-rgb: 235, 232, 250;
+  --highlight-rgb: 243, 245, 159;
+  --accent-blue-rgb: 129, 168, 224;
+  --accent-green-rgb: 185, 222, 210;
+  --background-light-rgb: 237, 239, 247;
+  --background-light-to-rgb: 219, 224, 237;
+  --background-dark-rgb: 60, 59, 103;
+}
+
+.theme-light {
+  --background-rgb: var(--background-light-rgb);
+  --background-to-rgb: var(--background-light-to-rgb);
+  --background-nav-rgb: var(--background-dark-rgb);
+  --header-rgb: var(--background-dark-rgb);
+  --background-header-decoration-rgba: var(--highlight-rgb), 0.6;
+  --main-accent-rgba: var(--accent-blue-rgb);
+  --main-primary-rgba: var(--primary-rgb);
+  --main-secondary-rgba: var(--secondary-rgb);
+  --main-title-accent-rgb: var(--white-rgb);
+  --main-title-primary-rgb: var(--white-rgb);
+  --main-title-secondary-rgb: var(--white-rgb);
+  --background-main-rgba: var(--white-rgb), 0.333;
+  --background-main-blur-rgba: var(--transparent-rgba);
+  --background-gooddeed-card-rgba: var(--white-rgb), 0.5;
+  --background-gooddeed-card-btn-rgba: var(--white-rgb), 0.188;
+  --background-member-card-rgba: var(--white-rgb), 0.459;
+  --background-avatar-maker-rgba: 129, 7, 225, 0.2;
+  --background-avatar-maker-to-rgba: var(--white-rgb), 0.4;
+  --border-avatar-rgb: var(--background-dark-rgb);
+  --background-showcase-card-rgba: 129, 7, 225, 0.2;
+  --comment-input-rgba: var(--black-rgb), 0.6;
+  --background-place-rgba: 149, 135, 225, 0.933;
+  --background-place-inner-rgba: var(--background-light-rgb), 0.7;
+  --border-place-card-rgba: var(--background-light-rgb), 0.7;
+  --background-reborn-cart-rgba: 186, 199, 217, 0.549;
+  --background-reborn-cart-inner-rgba: var(--white-rgb);
+}
+
+.theme-dark {
+  --background-rgb: var(--background-dark-rgb);
+  --background-to-rgb: var(--background-dark-rgb);
+  --background-nav-rgb: 47, 44, 52;
+  --header-rgb: var(--white-rgb);
+  --background-header-decoration-rgba: var(--black-rgb), 0.2;
+  --main-accent-rgba: var(--black-rgb), 0.6;
+  --main-primary-rgba: var(--black-rgb), 0.6;
+  --main-secondary-rgba: var(--black-rgb), 0.6;
+  --main-title-accent-rgb: 184, 213, 255;
+  --main-title-primary-rgb: 241, 193, 248;
+  --main-title-secondary-rgb: 200, 190, 255;
+  --background-main-rgba: var(--black-rgb), 0.3;
+  --background-main-blur-rgba: var(--black-rgb);
+  --background-gooddeed-card-rgba: var(--black-rgb), 0.3;
+  --background-gooddeed-card-btn-rgba: var(--black-rgb), 0.2;
+  --background-member-card-rgba: var(--black-rgb), 0.145;
+  --background-avatar-maker-rgba: var(--black-rgb), 0.5;
+  --background-avatar-maker-to-rgba: var(--black-rgb), 0.5;
+  --border-avatar-rgb: 255, 233, 246;
+  --background-showcase-card-rgba: var(--transparent-rgba);
+  --comment-input-rgba: var(--white-rgb), 0.6;
+  --background-place-rgba: var(--black-rgb), 0.5;
+  --background-place-inner-rgba: var(--black-rgb), 0.5;
+  --border-place-card-rgba: var(--transparent-rgba);
+  --background-reborn-cart-rgba: var(--background-dark-rgb), 0.7;
+  --background-reborn-cart-inner-rgba: var(--black-rgb), 0.1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
