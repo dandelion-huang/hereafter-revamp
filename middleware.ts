@@ -41,14 +41,18 @@ function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
     return [pathnameLocale];
   }
 
-  const supportedPathnameLocale = locales.find((locale) => {
-    return locale.split('-').some(
-      (l) =>
-        l.localeCompare(pathnameLocale, undefined, {
-          sensitivity: 'base',
-        }) === 0
-    );
-  });
+  const isValidLocale = validLocaleRegex.test(pathnameLocale);
+
+  const supportedPathnameLocale =
+    isValidLocale &&
+    locales.find((locale) => {
+      return locale.split('-').some(
+        (l) =>
+          l.localeCompare(pathnameLocale, undefined, {
+            sensitivity: 'base',
+          }) === 0
+      );
+    });
 
   if (supportedPathnameLocale) {
     return [
@@ -60,7 +64,6 @@ function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
     ];
   }
 
-  const isValidLocale = validLocaleRegex.test(pathnameLocale);
   const locale = getLocale(request);
   const redirectUrl = isValidLocale
     ? pathname.replace(firstSegmentWithSlashRegex, `/${locale}`)
