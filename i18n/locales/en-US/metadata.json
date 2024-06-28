@@ -1,0 +1,34 @@
+{
+  "title": "HereAfter | 來生投放所",
+  "description": "HereAfter - Plan your next life for you.",
+  "author": [
+    { "name": "akimouin", "url": "https://github.com/akimouin" },
+    { "name": "ChangRongXuan", "url": "https://github.com/ChangRongXuan" },
+    { "name": "chiquzt", "url": "https://github.com/chiquzt" },
+    { "name": "chuanmin13", "url": "https://github.com/chuanmin13" },
+    { "name": "dandelion-huang", "url": "https://github.com/dandelion-huang" },
+    { "name": "hsin007", "url": "https://github.com/hsin007" },
+    { "name": "Nuyeel", "url": "https://github.com/Nuyeel" }
+  ],
+  "creator": "Yun Lee",
+  "formatDetection": {
+    "email": false,
+    "address": false,
+    "telephone": false
+  },
+  "icons": {
+    "icon": [{ "url": "/assets/favicon/favicon.png" }]
+  },
+  "openGraph": {
+    "url": "/assets/opengraph/HereAfter.png",
+    "locale": "en-US",
+    "type": "website"
+  },
+  "alternates": {
+    "canonical": "/",
+    "languages": {
+      "en-US": "/en-US",
+      "zh-TW": "/zh-TW"
+    }
+  }
+}
