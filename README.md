@@ -22,6 +22,8 @@ Node.js 版本：20.14.0
 
 ## 技術選擇（Skill Stack）
 
+> This section is written in English to avoid potential misunderstandings that might arise from a Chinese version.
+
 這部分覺得寫成中文反而會比較難懂，故以英文書寫。
 
 - **Next.js**: full-stack framework
@@ -59,10 +61,13 @@ Node.js 版本：20.14.0
 
 ## 鳴謝（Acknowledgements）
 
-除了使用到的 dependencies 的製作團隊，也想感謝以下工具的製作者。
+> In addition to the teams behind the dependencies used in this project, I would also like to thank the creators of the following tools or services.
+
+除了使用到的開源函式庫的製作團隊，也想感謝以下工具或服務的製作者。
 
 - [Excalidraw](https://excalidraw.com/)
 - [ChatGPT](https://chatgpt.com/)
+- [Vercel](https://vercel.com/)
 - [JSBEN.CH](https://jsben.ch/)
 - [Figma](https://www.figma.com/)
 - [Warp](https://www.warp.dev/)

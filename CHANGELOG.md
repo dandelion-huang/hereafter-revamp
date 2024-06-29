@@ -4,6 +4,10 @@
 
 或許應該說是開發日誌比較妥適。
 
+## 2024-06-29
+
+- 啟用 Vercel 提供的 Speed Insights 服務。
+
 ## 2024-06-28
 
 - 使用 i18next、react-i18next、@formatjs/intl-localematcher 和 negotiator 等來實作 i18n。
@@ -17,7 +21,7 @@
   > 將來如果覺得需要，可以統一在 `tailwind.css` 和 `tailwind.config.ts` 看到所有額外定義的 styles，可以再抽出來到 css modules 中。
 - 原專案在 RWD 方面有許多力有未殆之處，這次會配合 tailwindcss 在這部分做得更完整。
 - 將原本的 component `Background` 抽出來，利用 css `position: fixed` 以及; `overscroll-behavior: none` 來處理 scroll bouncing。
-- 原本使用 `react-scroll-motion` 來處理 scroll 動畫，在這次我們使用 `framer-motion` 來實作。
+- 原本使用 react-scroll-motion 來處理 scroll 動畫，在這次我們使用 framer-motion 來實作。
   > 這部分等 CSS scroll-driven animations 支援度高一點以後，可以考慮改成純用 CSS 實作。
 
 ## 2024-04-28
