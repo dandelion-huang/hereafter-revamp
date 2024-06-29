@@ -1,4 +1,4 @@
-# 開發日誌 (Changelog)
+# 開發日誌（Changelog）
 
 > 只用來記錄與原專案的差異之處。並沒有特別按照一般 changelog 的格式分成 release, unreleased 等來撰寫。
 

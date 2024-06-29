@@ -12,7 +12,7 @@
 
 目前的英文使用 ChatGPT 翻譯。
 
-## 開發環境 (Environment)
+## 開發環境（Environment）
 
 > pnpm version: 9.4.0  
 > Node.js version: 20.14.0
@@ -37,7 +37,7 @@ Node.js 版本：20.14.0
 - **MarkdownLint**: markdown linting
 - **Stylelint & stylelint-order**: style linting
 
-## 網頁聲明 (Disclaimer)
+## 網頁聲明（Disclaimer）
 
 > The original project was purely for learning and demonstrating front-end developing, and will not be used for any commercial purposes.
 >
@@ -53,11 +53,11 @@ Node.js 版本：20.14.0
 
 > Email: dandelion820308@gmail.com
 
-## 參考素材 (References & Resources)
+## 參考素材（References & Resources）
 
 - [キボウノアカリ](https://kibounoakari.com/)
 
-## 鳴謝 (Acknowledgements)
+## 鳴謝（Acknowledgements）
 
 除了使用到的 dependencies 的製作團隊，也想感謝以下工具的製作者。
 
