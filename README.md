@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hereafter Revamp
 
-## Getting Started
+> This is a project to revamp the [Hereafter](https://github.com/Nuyeel/Hereafter).
+>
+> Due to the design issues, Traditional Chinese provides the best user experience. I am currently working on Internationalization (i18n) to offer a better experience for non-Chinese users.
+>
+> The current English translation uses ChatGPT for translation.
 
-First, run the development server:
+這是一個重新設計並改寫的 [Hereafter](https://github.com/Nuyeel/Hereafter) 專案。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+由於設計問題，繁體中文能提供最好的使用者體驗。我正在致力於進行國際化翻譯以改善非繁體中文使用者的體驗。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+目前的英文使用 ChatGPT 翻譯。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 開發環境 (Environment)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+> pnpm version: 9.4.0  
+> Node.js version: 20.14.0
 
-## Learn More
+pnpm 版本：9.4.0  
+Node.js 版本：20.14.0
 
-To learn more about Next.js, take a look at the following resources:
+## 技術選擇（Skill Stack）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+這部分覺得寫成中文反而會比較難懂，故以英文書寫。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Next.js**: full-stack framework
+- **TypeScript**: type checking
+- **ZOD**: runtime validation
+- **i18next & React-i18next**: internationalization
+- **Tailwind CSS**: styling
+- **PostCSS and Autoprefixer**: post-processing CSS
+- **ESLint**: linting
+- **Prettier**: code formatting
+- **Husky**: git hooks
+- **Commitlint**: commit message linting (conventional commits)
+- **MarkdownLint**: markdown linting
+- **Stylelint & stylelint-order**: style linting
 
-## Deploy on Vercel
+## 網頁聲明 (Disclaimer)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> The original project was purely for learning and demonstrating front-end developing, and will not be used for any commercial purposes.
+>
+> Due to time constraints, some materials from online websites were used. If there are any copyright issues that need to be addressed, please contact me.
+>
+> I will do my best to gradually replace the materials with self-produced ones to avoid this concern.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+原專案純粹作為學習並展示前端開發成果之用，不會有任何商業用途。
+
+礙於時程，因此有使用到一些線上網頁的素材。如果有任何侵權問題希望改善，請聯絡我。
+
+我會盡力逐漸將素材更改為自行製作，以避免此疑慮。
+
+> Email: dandelion820308@gmail.com
+
+## 參考素材 (References & Resources)
+
+- [キボウノアカリ](https://kibounoakari.com/)
+
+## 鳴謝 (Acknowledgements)
+
+除了使用到的 dependencies 的製作團隊，也想感謝以下工具的製作者。
+
+- [Excalidraw](https://excalidraw.com/)
+- [ChatGPT](https://chatgpt.com/)
+- [JSBEN.CH](https://jsben.ch/)
+- [Figma](https://www.figma.com/)
+- [Warp](https://www.warp.dev/)
+- [Homebrew](https://brew.sh/)
+- [Cursor](https://www.cursor.com/)
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally)
+- [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
+- [File Nesting Updater](https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting)
+- [Supermaven](https://supermaven.com/)
+- [lclhost](https://lcl.host/)
+- [Certbot](https://certbot.eff.org/)
