@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { dir } from 'i18next';
 import { type Metadata } from 'next';
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         className={`${notoSans.variable} ${notoSansTC.variable} ${mPlusRounded1c.variable}`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
