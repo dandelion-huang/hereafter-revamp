@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss';
+import { type Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -6,6 +7,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       container: {
@@ -26,7 +28,7 @@ const config: Config = {
         'bgc-light-to': 'rgba(var(--background-light-to-rgb))',
         'bgc-dark': 'rgba(var(--background-dark-rgb))',
         'bgc-nav': 'rgba(var(--background-nav-rgb))',
-        'bgc-header': 'rgba(var(--header-rgb))',
+        header: 'rgba(var(--header-rgb))',
         'bgc-header-decor': 'rgba(var(--background-header-decoration-rgba))',
         'main-accent': 'rgba(var(--main-blue-rgba))',
         'main-primary': 'rgba(var(--main-primary-rgba))',
@@ -53,8 +55,12 @@ const config: Config = {
           'rgba(var(--background-reborn-cart-inner-rgba))',
       },
       fontFamily: {
-        'noto-sans': ['var(--font-noto-sans)', 'var(--font-noto-sans-tc)'],
-        'm-plus': ['var(--font-m-plus-rounded-1c)'],
+        'noto-sans': [
+          'var(--font-noto-sans)',
+          'var(--font-noto-sans-tc)',
+          ...fontFamily.sans,
+        ],
+        'm-plus': ['var(--font-m-plus-rounded-1c)', ...fontFamily.sans],
       },
     },
   },

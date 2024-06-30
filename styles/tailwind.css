@@ -19,7 +19,7 @@
   --background-dark-rgb: 60, 59, 103;
 }
 
-.theme-light {
+.light {
   --background-rgb: var(--background-light-rgb);
   --background-to-rgb: var(--background-light-to-rgb);
   --background-nav-rgb: var(--background-dark-rgb);
@@ -48,7 +48,7 @@
   --background-reborn-cart-inner-rgba: var(--white-rgb);
 }
 
-.theme-dark {
+.dark {
   --background-rgb: var(--background-dark-rgb);
   --background-to-rgb: var(--background-dark-rgb);
   --background-nav-rgb: 47, 44, 52;
