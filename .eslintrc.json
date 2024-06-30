@@ -38,6 +38,10 @@
         "default": "array"
       }
     ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
     "import/order": [
       "error",
       {
@@ -58,7 +62,6 @@
       }
     ],
     "no-console": "warn",
-    "no-unused-vars": "warn",
     "no-var": "warn",
     "object-shorthand": "warn",
     "prefer-const": "warn",
