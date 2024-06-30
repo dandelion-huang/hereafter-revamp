@@ -1,9 +1,11 @@
-const FALLBACK_LANGUAGE = 'en-US';
-const LANGUAGES = [FALLBACK_LANGUAGE, 'zh-TW'] as const;
-const LOCALE_EMOJIS = ['🇺🇸', '🇹🇼'] as const;
-const DEFAULT_NAMESPACE = 'common';
-const NAMESPACES = [DEFAULT_NAMESPACE, 'metadata'] as const;
-const COOKIE_NAME = 'i18next';
+import {
+  COOKIE_NAME,
+  DEFAULT_NAMESPACE,
+  FALLBACK_LANGUAGE,
+  LANGUAGES,
+  LOCALE_EMOJIS,
+  NAMESPACES,
+} from '@/constants/i18n';
 
 export const i18nConfig = {
   defaultLocale: FALLBACK_LANGUAGE,
@@ -13,23 +15,25 @@ export const i18nConfig = {
   cookieName: COOKIE_NAME,
 } as const;
 
-export type Locale = (typeof i18nConfig.locales)[number];
+const { locales, defaultLocale, defaultNamespace } = i18nConfig;
+
+export type Locale = (typeof locales)[number];
 export type Namespace = (typeof NAMESPACES)[number];
 export type Namespaces = Namespace | Namespace[];
 export type TranslationOptions = { keyPrefix?: string };
 
 export function getOptions(
-  lng: Locale = i18nConfig.defaultLocale,
-  ns: Namespaces = i18nConfig.defaultNamespace
+  lng: Locale = defaultLocale,
+  ns: Namespaces = defaultNamespace
 ) {
   return {
     // debug: true,
-    supportedLngs: i18nConfig.locales,
-    // preload: i18nConfig.locales,
-    fallbackLng: i18nConfig.defaultLocale,
+    supportedLngs: locales,
+    // preload: locales,
+    fallbackLng: defaultLocale,
     lng,
-    fallbackNS: i18nConfig.defaultNamespace,
-    defaultNS: i18nConfig.defaultNamespace,
+    fallbackNS: defaultNamespace,
+    defaultNS: defaultNamespace,
     ns,
   };
 }

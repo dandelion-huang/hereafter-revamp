@@ -7,6 +7,7 @@ import { i18nConfig, type Locale } from '@/i18n/config';
 import {
   firstSegmentWithSlashRegex,
   isValidLocale as isSupportedLocale,
+  parseLocale,
   validLocaleRegex,
 } from '@/schemas/localeSchema';
 
@@ -25,7 +26,7 @@ function getLocale(request: NextRequest): Locale {
     },
   }).languages();
 
-  return matchLocale(acceptLanguages, locales, defaultLocale) as Locale; // skip type check
+  return parseLocale(matchLocale(acceptLanguages, locales, defaultLocale));
 }
 
 function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
