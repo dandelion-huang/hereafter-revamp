@@ -1,4 +1,5 @@
 import { match as matchLocale } from '@formatjs/intl-localematcher';
+import { getCookie, setCookie } from 'cookies-next';
 import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
 
@@ -12,7 +13,7 @@ import {
 const { cookieName, locales, defaultLocale } = i18nConfig;
 
 function getLocale(request: NextRequest): Locale {
-  const cookieLocale = request.cookies.get(cookieName)?.value;
+  const cookieLocale = getCookie(cookieName, { req: request });
 
   if (cookieLocale && isSupportedLocale(cookieLocale)) {
     return cookieLocale;
@@ -79,12 +80,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(localeRedirectUrl, request.url));
   }
 
-  const cookieLocale = request.cookies.get(cookieName)?.value;
+  const cookieLocale = getCookie(cookieName, { req: request });
 
   if (cookieLocale !== locale) {
     const response = NextResponse.next();
 
-    response.cookies.set(cookieName, locale, {
+    setCookie(cookieName, locale, {
+      req: request,
+      res: response,
       httpOnly: true,
       secure: true,
       sameSite: 'strict',

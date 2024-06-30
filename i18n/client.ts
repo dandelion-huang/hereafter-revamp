@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import { default as i18next } from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
-import { useCookies } from 'react-cookie';
 import {
   initReactI18next,
   useTranslation as useTranslationOrg,
 } from 'react-i18next';
 
+import { useCookie } from '@/hooks/useCookie';
 import {
   getOptions,
   i18nConfig,
@@ -51,7 +51,7 @@ export function useTranslation(
 ) {
   const translation = useTranslationOrg(ns, options);
   const { i18n } = translation;
-  const [cookies, setCookie] = useCookies([cookieName]);
+  const [cookieLocale, setCookieLocale] = useCookie(cookieName);
 
   if (isServerSide && lng !== i18n.resolvedLanguage) {
     i18n.changeLanguage(lng);
@@ -64,15 +64,10 @@ export function useTranslation(
   }, [lng, i18n]);
 
   useEffect(() => {
-    if (cookies.i18next !== lng) {
-      setCookie(cookieName, lng, {
-        path: '/',
-        httpOnly: true,
-        sameSite: 'strict',
-        secure: true,
-      });
+    if (cookieLocale !== lng) {
+      setCookieLocale(lng);
     }
-  }, [lng, cookies.i18next, setCookie]);
+  }, [cookieLocale, lng, setCookieLocale]);
 
   return translation;
 }
