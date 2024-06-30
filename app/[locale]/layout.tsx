@@ -1,11 +1,16 @@
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { getCookie } from 'cookies-next';
 import { dir } from 'i18next';
 import { type Metadata } from 'next';
 
+import { DEFAULT_THEME as defaultTheme } from '@/constants/theme';
+
 import { mPlusRounded1c, notoSans, notoSansTC } from '@/app/fonts';
+import { AppThemeProvider } from '@/components/context/theme';
 import { useTranslation as serverSideTranslation } from '@/i18n';
 import { i18nConfig, type Locale } from '@/i18n/config';
 import defaultMetadata from '@/i18n/locales/en-US/metadata.json';
+import { cn } from '@/utils/misc';
 
 import '@/styles/global.css';
 import '@/styles/tailwind.css';
@@ -32,19 +37,32 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default function AppLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
+  const theme = getCookie('next-theme') ?? defaultTheme;
+
   return (
-    <html lang={locale} dir={dir(locale)}>
+    <html
+      suppressHydrationWarning
+      className={cn(theme, 'scroll-smooth')}
+      dir={dir(locale)}
+      lang={locale}
+    >
       <body
-        className={`${notoSans.variable} ${notoSansTC.variable} ${mPlusRounded1c.variable}`}
+        className={cn(
+          notoSans.variable,
+          notoSansTC.variable,
+          mPlusRounded1c.variable
+        )}
       >
-        {children}
+        <AppThemeProvider attribute="class" defaultTheme={theme}>
+          {children}
+        </AppThemeProvider>
         <SpeedInsights />
       </body>
     </html>
