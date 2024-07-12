@@ -2,8 +2,12 @@
 
 import { forwardRef } from 'react';
 
-import { type HTMLMotionProps, motion, useTransform } from 'framer-motion';
-import { MotionValue } from 'framer-motion';
+import {
+  type HTMLMotionProps,
+  motion,
+  MotionValue,
+  useTransform,
+} from 'framer-motion';
 import Image from 'next/image';
 
 import { IntroSection } from '@/components/intro/intro-section';
