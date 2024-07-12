@@ -29,7 +29,6 @@ const Background = ({ children, className, theme }: BackgroundProps) => {
     <div
       aria-hidden="true"
       className={cn(backgroundVariants({ theme, className }))}
-      role="presentation"
     >
       {children}
     </div>
