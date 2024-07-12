@@ -30,6 +30,10 @@ Node.js 版本：20.14.0
 - **TypeScript**: type checking
 - **ZOD**: runtime validation
 - **i18next & React-i18next**: internationalization
+- **cookies-next**: universal cookie handling
+- **next-themes**: theming
+- **framer-motion**: animation
+- **class-variance-authority**: creating variants
 - **Tailwind CSS**: styling
 - **PostCSS and Autoprefixer**: post-processing CSS
 - **ESLint**: linting
@@ -38,6 +42,7 @@ Node.js 版本：20.14.0
 - **Commitlint**: commit message linting (conventional commits)
 - **MarkdownLint**: markdown linting
 - **Stylelint & stylelint-order**: style linting
+- **SVGO** for optimizing SVG images
 
 ## 網頁聲明（Disclaimer）
 
