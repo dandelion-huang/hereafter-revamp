@@ -8,7 +8,7 @@
 
 - 在使用 Next.js `<Image>` 的時候，有思考到 `role="presentation"`、`role="none"` 或 `aria-hidden="true"` 等 accessibility 的問題。
   > 主要是在製作 component `Background` 的時候想到這個問題。
-  > 但 intro page 中也有很多裝飾性的內容，但可能是會影響故事性的，這部分應該要透過 `alt` 來補足。所以先處理 component `Background` 的部分就好，使用 `aria-hidden="true"` 和 `role="presentation"` 處理。
+  > 但 intro page 中也有很多裝飾性的內容，但可能是會影響故事性的，這部分應該要透過 `alt` 來補足。所以先處理 component `Background` 的部分就好，使用 `aria-hidden="true"` 處理。
   > 可以在初版完成後再考慮回來補足。
 - intro page 的最後一個部分 welcome banner，考慮了很久都覺得因為文案的關係，原版的排版在 RWD 上找不到妥善的方案，因此直接調整排版。
   > 這部分的排版等做完 component `Button` 後還會回來調整，因為 intro page 右上角的 Skip 和進入 lobby page 的 ui 都會使用到。
