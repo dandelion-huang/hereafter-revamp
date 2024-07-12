@@ -13,6 +13,9 @@ const config: Config = {
       container: {
         center: true,
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
         primary: 'rgba(var(--primary-rgb))',
         secondary: 'rgba(var(--secondary-rgb))',
@@ -61,6 +64,77 @@ const config: Config = {
           ...fontFamily.sans,
         ],
         'm-plus': ['var(--font-m-plus-rounded-1c)', ...fontFamily.sans],
+      },
+      keyframes: {
+        'bounce-xy': {
+          '0%': {
+            transform: 'translate3d(-50px, 20px, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(50px, 0, 0)',
+          },
+        },
+        'clock-face': {
+          '0%': {
+            transform: 'translate3d(0, -5vw, 0) rotate3d(1, 1, 1, -60deg)',
+          },
+          '100%': {
+            transform: 'translate3d(0, 5vw, 0) rotate3d(1, 1, 1, 60deg)',
+          },
+        },
+        'clock-hand': {
+          '0%': {
+            transform: 'rotate3d(0, 1, 0, 0deg)',
+          },
+          '100%': {
+            transform: 'rotate3d(0, 1, 0, 360deg)',
+          },
+        },
+        'earth-rotate': {
+          '0%': {
+            transform: 'translate3d(-100%, 0, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(100%, 0, 0)',
+          },
+        },
+        'scroll-guide': {
+          '0%': {
+            transform: 'translate3d(0, -110%, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(0, 110%, 0)',
+          },
+        },
+        sparkle: {
+          '0%': {
+            opacity: '1',
+          },
+          '33%': {
+            opacity: '0',
+          },
+          '66%': {
+            opacity: '1',
+          },
+          '100%': {
+            opacity: '0.3',
+          },
+        },
+        shine: {
+          '0%': {
+            scale: '1',
+          },
+          '100%': {
+            scale: '1.05',
+          },
+        },
+      },
+      animation: {
+        'bounce-intro': 'bounce-xy 15s linear infinite alternate-reverse',
+        'clock-face-intro': 'clock-face 10s ease-in-out infinite alternate',
+        'scroll-guide': 'scroll-guide 1.5s linear infinite',
+        'spin-intro': 'spin 20s linear infinite',
+        'shine-intro': 'shine 1s ease-in infinite alternate-reverse',
       },
     },
   },

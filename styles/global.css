@@ -1,3 +1,9 @@
+/* the container of useScroll should have a non-static position */
+/* https://github.com/framer/motion/issues/1853 */
+html {
+  position: relative;
+}
+
 /* disable overscroll (scroll bouncing) */
 /* safari is not supported */
 body {

@@ -78,6 +78,34 @@
 }
 
 @layer utilities {
+  .clip-top-left {
+    clip-path: polygon(48% 48%, 100% 48%, 100% 100%, 48% 100%);
+  }
+
+  .clip-top-right {
+    clip-path: polygon(0 48%, 52% 48%, 52% 100%, 0 100%);
+  }
+
+  .clip-bottom-left {
+    clip-path: polygon(48% 0, 100% 0, 100% 52%, 48% 52%);
+  }
+
+  .clip-bottom-right {
+    clip-path: polygon(0 0, 52% 0, 52% 52%, 0 52%);
+  }
+
+  .perspective-400vw {
+    perspective: 400vw;
+  }
+
+  .transform-rotate3d-clock-outline {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+
+  .transform-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
