@@ -31,7 +31,7 @@ const ScrollMotionWelcome = forwardRef<
   );
 
   return (
-    <IntroSection ref={ref}>
+    <IntroSection ref={ref} size="short">
       <div className="fixed left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2">
         <motion.div
           style={{
