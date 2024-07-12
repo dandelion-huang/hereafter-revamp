@@ -25,7 +25,7 @@ const AppThemeProviderHelper = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    if (theme && isValidTheme(theme)) {
+    if (isValidTheme(theme!)) {
       setCookie(cookieName, theme, {
         httpOnly: true,
         secure: true,

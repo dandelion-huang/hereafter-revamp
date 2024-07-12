@@ -45,21 +45,19 @@ export default function AppLayout({
   params: { locale: Locale };
 }>) {
   const theme = getCookie('next-theme') ?? defaultTheme;
+  const fontClasses =
+    locale === i18nConfig.defaultLocale
+      ? cn(notoSans.variable, mPlusRounded1c.variable)
+      : cn(notoSans.variable, notoSansTC.variable, mPlusRounded1c.variable);
 
   return (
     <html
       suppressHydrationWarning
-      className={cn(theme, 'scroll-smooth')}
+      className={cn(theme, 'scroll-smooth bg-bgc')}
       dir={dir(locale)}
       lang={locale}
     >
-      <body
-        className={cn(
-          notoSans.variable,
-          notoSansTC.variable,
-          mPlusRounded1c.variable
-        )}
-      >
+      <body className={fontClasses}>
         <AppThemeProvider attribute="class" defaultTheme={theme}>
           {children}
         </AppThemeProvider>
