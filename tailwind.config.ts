@@ -138,6 +138,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-3d')],
 };
 export default config;
