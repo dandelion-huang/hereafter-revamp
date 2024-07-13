@@ -14,10 +14,10 @@
 
 ## 開發環境（Environment）
 
-> pnpm version: 9.4.0  
+> pnpm version: 9.5.0  
 > Node.js version: 20.14.0
 
-pnpm 版本：9.4.0  
+pnpm 版本：9.5.0  
 Node.js 版本：20.14.0
 
 ## 技術選擇（Skill Stack）
@@ -74,6 +74,7 @@ Node.js 版本：20.14.0
 - [ChatGPT](https://chatgpt.com/)
 - [Vercel](https://vercel.com/)
 - [JSBEN.CH](https://jsben.ch/)
+- [jsPerf.app](https://jsperf.app/)
 - [Figma](https://www.figma.com/)
 - [Warp](https://www.warp.dev/)
 - [Homebrew](https://brew.sh/)
