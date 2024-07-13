@@ -9,13 +9,13 @@ import { cn } from '@/utils/misc';
 
 const introSectionVariants = cva('w-full', {
   variants: {
-    size: {
-      tall: 'h-[300dvh]',
-      short: 'h-[150dvh]',
+    duration: {
+      long: 'h-[300svh]',
+      short: 'h-[150svh]',
     },
   },
   defaultVariants: {
-    size: 'tall',
+    duration: 'long',
   },
 });
 
@@ -27,14 +27,14 @@ export interface IntroSectionProps
 }
 
 const IntroSection = forwardRef<HTMLElement, IntroSectionProps>(
-  function IntroSection({ children, className, size }, ref) {
+  function IntroSection({ children, className, duration }, ref) {
     return (
       <motion.section
         ref={ref}
         initial={{ visibility: 'hidden', zIndex: -10 }}
         transition={{ delay: 0, duration: 0 }}
         whileInView={{ visibility: 'visible', zIndex: 10 }}
-        className={cn(introSectionVariants({ size, className }))}
+        className={cn(introSectionVariants({ duration, className }))}
       >
         {children}
       </motion.section>

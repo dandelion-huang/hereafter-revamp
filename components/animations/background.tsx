@@ -3,12 +3,12 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/misc';
 
 const backgroundVariants = cva(
-  'fixed top-0 -z-50 min-h-dvh w-full bg-gradient-to-b from-bgc to-bgc-to',
+  'fixed top-0 -z-50 min-h-svh w-full bg-gradient-to-b from-bgc to-bgc-to',
   {
     variants: {
       theme: {
-        light: 'light',
         dark: 'dark',
+        light: 'light',
       },
     },
     defaultVariants: {
