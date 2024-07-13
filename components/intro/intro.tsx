@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 
 import { useScroll } from 'framer-motion';
+import Link from 'next/link';
 
 import { IntroBackground } from '@/components/intro/intro-background';
 import { ScrollMotionAppearance } from '@/components/intro/scroll-motion-appearance';
@@ -11,7 +12,9 @@ import { ScrollMotionPlace } from '@/components/intro/scroll-motion-place';
 import { ScrollMotionStar } from '@/components/intro/scroll-motion-star';
 import { ScrollMotionTime } from '@/components/intro/scroll-motion-time';
 import { ScrollMotionWelcome } from '@/components/intro/scroll-motion-welcome';
-import { ScrollStatus } from '@/components/intro/srcoll-status';
+import { ScrollStatusIndicator } from '@/components/intro/scroll-status-indicator';
+import { ScrollStatusTab } from '@/components/intro/srcoll-status-tab';
+import { useScrollStatus } from '@/hooks/useScrollStatus';
 
 const Intro = ({
   starSlogan,
@@ -33,9 +36,17 @@ const Intro = ({
     target: welcomeRef,
     offset: ['start end', 'end end'],
   });
+  const scrollStatus = useScrollStatus(ScrollYWelcome, 0.6);
 
   return (
     <>
+      <ScrollStatusTab
+        fontColor="highlight"
+        position="top"
+        status={scrollStatus}
+      >
+        {scrollStatus === 'scroll' ? <Link href="/lobby">skip</Link> : ''}
+      </ScrollStatusTab>
       <main>
         <ScrollMotionStar slogan={starSlogan} />
         <ScrollMotionGod slogan={godSlogan} />
@@ -48,7 +59,10 @@ const Intro = ({
           slogan={welcomeSlogan}
         />
       </main>
-      <ScrollStatus scrollY={ScrollYWelcome} />
+      <ScrollStatusTab fontColor="white" status={scrollStatus}>
+        {scrollStatus}
+        <ScrollStatusIndicator status={scrollStatus} />
+      </ScrollStatusTab>
       <IntroBackground />
     </>
   );

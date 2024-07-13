@@ -27,7 +27,7 @@ const ScrollMotionTime = ({
   );
 
   return (
-    <IntroSection ref={timeRef} size="short">
+    <IntroSection ref={timeRef} duration="short">
       <div className="fixed left-1/2 top-1/2 md:left-2/3">
         <motion.div
           style={{

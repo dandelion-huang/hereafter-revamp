@@ -96,7 +96,7 @@ const ScrollMotionGod = ({
           </div>
           <div className="absolute left-1/2 top-1/2 translate-x-[96%] translate-y-[129%]">
             <motion.div
-              className="relative aspect-[215/51] w-[150px] origin-bottom-left rotate-[-65deg] sm:w-[230px]"
+              className="relative aspect-[215/51] w-[150px] origin-bottom-left sm:w-[230px]"
               style={{
                 opacity: opacityGodSpill,
                 rotate: rotateGodSpill,

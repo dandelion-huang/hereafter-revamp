@@ -8,13 +8,13 @@ import { cn } from '@/utils/misc';
 const introWordingVariants = cva('fixed w-full', {
   variants: {
     vertical: {
-      default: 'top-[80%]',
-      center: 'top-[80%] md:top-1/2 md:-translate-y-1/2',
-      'lg:center': 'top-[80%] lg:top-1/2 lg:-translate-y-1/2',
+      bottom: 'bottom-8',
+      center: 'bottom-8 md:bottom-1/2 md:translate-y-1/2',
+      'lg:center': 'bottom-8 lg:bottom-1/2 lg:translate-y-1/2',
     },
   },
   defaultVariants: {
-    vertical: 'default',
+    vertical: 'bottom',
   },
 });
 

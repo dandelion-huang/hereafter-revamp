@@ -24,7 +24,7 @@ const IntroBackground = () => {
       <div
         className={cn(
           celestialClasses,
-          '-left-2/3 top-[70%] aspect-[1008/464] w-[700px] animate-bounce-intro opacity-50 blur-xl sm:-left-[20%] 2xl:w-[1500px]'
+          '-left-2/3 top-[75%] aspect-[1008/464] w-[700px] animate-bounce-intro opacity-50 blur-xl sm:-left-[20%] 2xl:w-[1500px]'
         )}
       >
         <Image

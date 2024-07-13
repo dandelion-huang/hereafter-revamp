@@ -45,10 +45,7 @@ export default function AppLayout({
   params: { locale: Locale };
 }>) {
   const theme = getCookie('next-theme') ?? defaultTheme;
-  const fontClasses =
-    locale === i18nConfig.defaultLocale
-      ? cn(notoSans.variable, mPlusRounded1c.variable)
-      : cn(notoSans.variable, notoSansTC.variable, mPlusRounded1c.variable);
+  const isTwLocale = locale === i18nConfig.locales[1];
 
   return (
     <html
@@ -57,7 +54,13 @@ export default function AppLayout({
       dir={dir(locale)}
       lang={locale}
     >
-      <body className={fontClasses}>
+      <body
+        className={cn(
+          notoSans.variable,
+          mPlusRounded1c.variable,
+          isTwLocale && notoSansTC.variable
+        )}
+      >
         <AppThemeProvider attribute="class" defaultTheme={theme}>
           {children}
         </AppThemeProvider>

@@ -1,45 +1,52 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-import { type MotionValue } from 'framer-motion';
+import { type ScrollStatus } from '@/hooks/useScrollStatus';
+import { cn } from '@/utils/misc';
 
-import { ScrollStatusIndicator } from '@/components/intro/scroll-status-indicator';
+const scrollStatusTabVariants = cva('fixed z-50 w-full font-semibold', {
+  variants: {
+    fontColor: {
+      highlight: 'text-highlight',
+      white: 'text-white',
+    },
+    position: {
+      bottom: 'bottom-8',
+      top: 'top-8',
+    },
+  },
+  defaultVariants: {
+    fontColor: 'white',
+    position: 'bottom',
+  },
+});
 
-export type ScrollStatus = 'scroll' | 'end';
+export interface ScrollStatusTabProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof scrollStatusTabVariants> {
+  children?: React.ReactNode;
+  className?: string;
+  status: ScrollStatus;
+}
 
-const ScrollStatus = ({
-  scrollY,
-}: Readonly<{ scrollY: MotionValue<number> }>) => {
-  const [status, setStatus] = useState<ScrollStatus>('scroll');
-
-  useEffect(() => {
-    const updateStatus = (latest: number) => {
-      if (latest === 1 && status === 'scroll') {
-        setStatus('end');
-
-        return;
-      }
-
-      if (status === 'end') {
-        setStatus('scroll');
-      }
-    };
-
-    const unsubscribe = scrollY.on('change', updateStatus);
-
-    return () => {
-      unsubscribe();
-    };
-  }, [scrollY, status]);
-
+const ScrollStatusTab = ({
+  children,
+  className,
+  fontColor,
+  position,
+}: ScrollStatusTabProps) => {
   return (
-    <div className="fixed bottom-8 w-full">
-      <div className="container text-right font-semibold text-white">
-        <ScrollStatusIndicator status={status} />
+    <div
+      className={cn(
+        scrollStatusTabVariants({ fontColor, position, className })
+      )}
+    >
+      <div className="container flex items-center justify-end gap-2 overflow-hidden pr-8 text-right">
+        {children}
       </div>
     </div>
   );
 };
 
-export { ScrollStatus };
+export { ScrollStatusTab };

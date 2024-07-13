@@ -39,8 +39,8 @@ const ScrollMotionPlace = ({
   );
 
   return (
-    <IntroSection ref={placeRef} size="short">
-      <div className="fixed left-1/2 top-1/2 md:left-[80%] lg:left-2/3">
+    <IntroSection ref={placeRef} duration="short">
+      <div className="fixed left-1/2 top-[40%] h-[436px] md:left-[80%] md:top-1/2 md:h-[600px] lg:left-2/3">
         <motion.div
           style={{
             scale: scalePlaceEarth,
@@ -50,9 +50,9 @@ const ScrollMotionPlace = ({
         >
           <Earth />
         </motion.div>
-        <div className="absolute -left-[55px] -top-[105px] md:-left-[90px] md:-top-[60px]">
+        <div className="absolute -left-[32px] top-[1.8%] -translate-x-1/2 -translate-y-1/2 md:-left-[50px] md:-top-[3%]">
           <motion.div
-            className="absolute aspect-[144/199] w-[180px] scale-[0.2] md:w-[240px]"
+            className="relative aspect-[144/199] w-[180px] scale-[0.2] md:w-[240px]"
             style={{ opacity: opacityPlacePin }}
           >
             <Image
@@ -62,7 +62,7 @@ const ScrollMotionPlace = ({
             />
           </motion.div>
           <motion.div
-            className="absolute left-0 top-[14px] flex w-full items-center justify-center md:top-[19px]"
+            className="absolute left-0 top-[1.6%] w-full"
             style={{ scale: scalePlacePinInner, opacity: opacityPlacePin }}
           >
             <div className="aspect-[4/5] w-full rounded-[50%] bg-white" />
