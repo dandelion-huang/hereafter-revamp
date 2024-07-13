@@ -118,7 +118,7 @@ importers:
         specifier: ^9.0.11
         version: 9.0.11
       inquirer:
-        specifier: 9.3.5
+        specifier: ^9.3.5
         version: 9.3.5
       lint-staged:
         specifier: ^15.2.7
