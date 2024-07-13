@@ -31,7 +31,7 @@ const ScrollMotionPlace = ({
     ['0', '-50px']
   );
   const opacityPlacePin = useTransform(ScrollYPlace, [0.5, 0.6], [0, 1]);
-  const scalePlacePinInner = useTransform(ScrollYPlace, [0.6, 1], [0, 15]);
+  const scalePlacePinInner = useTransform(ScrollYPlace, [0.6, 1], [0, 1]);
   const translateYPlaceWording = useTransform(
     ScrollYPlace,
     [0.2, 1],
@@ -50,10 +50,9 @@ const ScrollMotionPlace = ({
         >
           <Earth />
         </motion.div>
-
         <div className="absolute -left-[55px] -top-[105px] md:-left-[90px] md:-top-[60px]">
           <motion.div
-            className="absolute aspect-[144/199] w-[45px] md:w-[60px]"
+            className="absolute aspect-[144/199] w-[180px] scale-[0.2] md:w-[240px]"
             style={{ opacity: opacityPlacePin }}
           >
             <Image
@@ -63,10 +62,10 @@ const ScrollMotionPlace = ({
             />
           </motion.div>
           <motion.div
-            className="absolute top-[14px] flex w-[45px] items-center justify-center md:top-[19px] md:w-[60px]"
+            className="absolute left-0 top-[14px] flex w-full items-center justify-center md:top-[19px]"
             style={{ scale: scalePlacePinInner, opacity: opacityPlacePin }}
           >
-            <div className="h-[15px] w-3 rounded-[50%] bg-white md:h-5 md:w-4" />
+            <div className="aspect-[4/5] w-full rounded-[50%] bg-white" />
           </motion.div>
         </div>
       </div>
