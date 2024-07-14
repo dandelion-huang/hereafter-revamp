@@ -1,7 +1,8 @@
 {
+  "metadataBase": "https://hereafter-revamp.vercel.app/",
   "title": "HereAfter | 來生投放所",
   "description": "HereAfter - Plan your next life for you.",
-  "author": [
+  "authors": [
     { "name": "akimouin", "url": "https://github.com/akimouin" },
     { "name": "ChangRongXuan", "url": "https://github.com/ChangRongXuan" },
     { "name": "chiquzt", "url": "https://github.com/chiquzt" },
@@ -20,7 +21,11 @@
     "icon": [{ "url": "/assets/favicon/favicon.png" }]
   },
   "openGraph": {
-    "url": "/assets/opengraph/HereAfter.png",
+    "images": {
+      "url": "/assets/opengraph/HereAfter.png",
+      "width": 1200,
+      "height": 630
+    },
     "locale": "en-US",
     "type": "website"
   },

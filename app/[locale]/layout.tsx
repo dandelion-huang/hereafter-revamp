@@ -29,10 +29,15 @@ export async function generateMetadata({
 
   return {
     ...defaultMetadata,
+    metadataBase: new URL(t('metadataBase')),
     title: t('title'),
     description: t('description'),
     openGraph: {
       ...defaultMetadata.openGraph,
+      images: {
+        ...defaultMetadata.openGraph.images,
+        alt: t('title'),
+      },
       locale: t('openGraph.locale'),
     },
   };
