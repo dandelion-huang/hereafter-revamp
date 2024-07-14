@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 
 import { Clock } from '@/components/animations/clock';
 import { IntroSection } from '@/components/intro/intro-section';
@@ -29,16 +29,15 @@ const ScrollMotionTime = ({
   return (
     <IntroSection ref={timeRef} duration="short">
       <div className="fixed left-1/2 top-1/2 md:left-2/3">
-        <motion.div
+        <m.div
           style={{
             scale: scaleTimeClock,
             opacity: opacityTime,
           }}
         >
           <Clock />
-        </motion.div>
+        </m.div>
       </div>
-
       <IntroWording
         opacity={opacityTime}
         vertical="center"

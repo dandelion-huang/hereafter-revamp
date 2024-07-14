@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 
 import {
   type HTMLMotionProps,
-  motion,
+  m,
   MotionValue,
   useTransform,
 } from 'framer-motion';
@@ -33,7 +33,7 @@ const ScrollMotionWelcome = forwardRef<
   return (
     <IntroSection ref={ref} duration="short">
       <div className="fixed left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2">
-        <motion.div
+        <m.div
           style={{
             opacity: opacityWelcome,
             translateY: translateYWelcomeWording,
@@ -46,7 +46,7 @@ const ScrollMotionWelcome = forwardRef<
               fill
             />
           </div>
-        </motion.div>
+        </m.div>
       </div>
 
       <IntroWording

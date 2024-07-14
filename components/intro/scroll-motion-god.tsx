@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 import { IntroSection } from '@/components/intro/intro-section';
@@ -44,14 +44,14 @@ const ScrollMotionGod = ({
   return (
     <IntroSection ref={godRef}>
       <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <motion.div
+        <m.div
           style={{
             opacity: opacityGod,
             scale: scaleGod,
           }}
         >
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2">
-            <motion.div
+            <m.div
               className="h-[80px] w-[700px] border-b-[3px] border-white sm:h-[120px] sm:border-b-[5px]"
               style={{
                 opacity: opacityGodTable,
@@ -60,7 +60,7 @@ const ScrollMotionGod = ({
             />
           </div>
           <div className="absolute left-1/2 top-1/2 -translate-y-1/4">
-            <motion.div
+            <m.div
               className="relative aspect-[51/179] w-[30px] origin-top-right sm:w-[45px]"
               style={{
                 rotate: rotateGodHand,
@@ -71,7 +71,7 @@ const ScrollMotionGod = ({
                 alt="God hand"
                 fill
               />
-            </motion.div>
+            </m.div>
           </div>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="relative aspect-[278/325] w-[180px] sm:w-[280px]">
@@ -83,7 +83,7 @@ const ScrollMotionGod = ({
             </div>
           </div>
           <div className="absolute left-1/2 top-1/2 translate-x-[275%] translate-y-[38%]">
-            <motion.div
+            <m.div
               className="relative aspect-[61/89] w-10 sm:w-[61px]"
               style={{ opacity: opacityGodGlass }}
             >
@@ -92,10 +92,10 @@ const ScrollMotionGod = ({
                 alt="God glass"
                 fill
               />
-            </motion.div>
+            </m.div>
           </div>
           <div className="absolute left-1/2 top-1/2 translate-x-[96%] translate-y-[129%]">
-            <motion.div
+            <m.div
               className="relative aspect-[215/51] w-[150px] origin-bottom-left sm:w-[230px]"
               style={{
                 opacity: opacityGodSpill,
@@ -107,11 +107,10 @@ const ScrollMotionGod = ({
                 alt="God glass"
                 fill
               />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
-
       <IntroWording
         opacity={opacityGodWording}
         translateY={translateYGodWording}

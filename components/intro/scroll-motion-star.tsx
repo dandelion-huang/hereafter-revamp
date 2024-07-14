@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 import { IntroSection } from '@/components/intro/intro-section';
@@ -33,12 +33,12 @@ const ScrollMotionStar = ({
 
   return (
     <IntroSection ref={starRef}>
-      <motion.div
+      <m.div
         className="fixed left-1/2 top-1/2 size-[145px] rounded-full bg-white -translate-x-1/2 -translate-y-1/2"
         style={{ opacity: opacityStar }}
       >
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-x-[53%] -translate-y-1/2">
-          <motion.div
+          <m.div
             className="size-full rounded-full bg-bgc-dark [clip-path:polygon(48%_48%,_100%_48%,_100%_100%,_48%_100%)]"
             style={{
               scale: scaleStarMask,
@@ -46,7 +46,7 @@ const ScrollMotionStar = ({
           />
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-y-1/2 translate-x-[43%]">
-          <motion.div
+          <m.div
             className="size-full rounded-full bg-bgc-dark [clip-path:polygon(0_48%,_52%_48%,_52%_100%,_0_100%)]"
             style={{
               scale: scaleStarMask,
@@ -54,7 +54,7 @@ const ScrollMotionStar = ({
           />
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-x-[53%] translate-y-[39%]">
-          <motion.div
+          <m.div
             className="size-full rounded-full bg-bgc-dark [clip-path:polygon(48%_0,_100%_0,_100%_52%,_48%_52%)]"
             style={{
               scale: scaleStarMask,
@@ -62,7 +62,7 @@ const ScrollMotionStar = ({
           />
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro translate-x-[43%] translate-y-[39%]">
-          <motion.div
+          <m.div
             className="size-full rounded-full bg-bgc-dark [clip-path:polygon(0_0,_52%_0,_52%_52%,_0_52%)]"
             style={{
               scale: scaleStarMask,
@@ -70,7 +70,7 @@ const ScrollMotionStar = ({
           />
         </div>
         <div className="absolute size-[145px] -translate-x-[0.5px] translate-y-[1px]">
-          <motion.div
+          <m.div
             className="relative aspect-square size-full"
             style={{
               scale: scaleStarSpark,
@@ -81,10 +81,9 @@ const ScrollMotionStar = ({
               alt="Star spark"
               fill
             />
-          </motion.div>
+          </m.div>
         </div>
-      </motion.div>
-
+      </m.div>
       <IntroWording
         opacity={opacityStarWording}
         translateY={translateYStarWording}

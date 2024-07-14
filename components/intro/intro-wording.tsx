@@ -1,7 +1,7 @@
 'use client';
 
 import { cva, type VariantProps } from 'class-variance-authority';
-import { motion, type MotionValue } from 'framer-motion';
+import { m, type MotionValue } from 'framer-motion';
 
 import { cn } from '@/utils/misc';
 
@@ -36,7 +36,7 @@ const IntroWording = ({
 }: IntroWordingProps) => {
   return (
     <div className={cn(introWordingVariants({ vertical, className }))}>
-      <motion.div
+      <m.div
         className="container whitespace-pre-line text-center font-semibold tracking-widest text-white sm:px-8 sm:text-lg md:text-left md:text-2xl lg:px-12 xl:text-4xl"
         style={{
           opacity,
@@ -44,7 +44,7 @@ const IntroWording = ({
         }}
       >
         <h2>{children}</h2>
-      </motion.div>
+      </m.div>
     </div>
   );
 };

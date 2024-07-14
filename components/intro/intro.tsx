@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { useScroll } from 'framer-motion';
+import { LazyMotion, useScroll } from 'framer-motion';
 import Link from 'next/link';
 
 import { IntroBackground } from '@/components/intro/intro-background';
@@ -15,6 +15,9 @@ import { ScrollMotionWelcome } from '@/components/intro/scroll-motion-welcome';
 import { ScrollStatusIndicator } from '@/components/intro/scroll-status-indicator';
 import { ScrollStatusTab } from '@/components/intro/srcoll-status-tab';
 import { useScrollStatus } from '@/hooks/useScrollStatus';
+
+const loadFeatures = () =>
+  import('@/components/intro/motion-features').then((res) => res.default);
 
 const Intro = ({
   starSlogan,
@@ -40,29 +43,31 @@ const Intro = ({
 
   return (
     <>
-      <ScrollStatusTab
-        fontColor="highlight"
-        position="top"
-        status={scrollStatus}
-      >
-        {scrollStatus === 'scroll' ? <Link href="/lobby">skip</Link> : ''}
-      </ScrollStatusTab>
-      <main>
-        <ScrollMotionStar slogan={starSlogan} />
-        <ScrollMotionGod slogan={godSlogan} />
-        <ScrollMotionTime slogan={timeSlogan} />
-        <ScrollMotionPlace slogan={placeSlogan} />
-        <ScrollMotionAppearance slogan={appearanceSlogan} />
-        <ScrollMotionWelcome
-          ref={welcomeRef}
-          scrollY={ScrollYWelcome}
-          slogan={welcomeSlogan}
-        />
-      </main>
-      <ScrollStatusTab fontColor="white" status={scrollStatus}>
-        {scrollStatus}
-        <ScrollStatusIndicator status={scrollStatus} />
-      </ScrollStatusTab>
+      <LazyMotion features={loadFeatures} strict>
+        <ScrollStatusTab
+          fontColor="highlight"
+          position="top"
+          status={scrollStatus}
+        >
+          {scrollStatus === 'scroll' ? <Link href="/lobby">skip</Link> : ''}
+        </ScrollStatusTab>
+        <main>
+          <ScrollMotionStar slogan={starSlogan} />
+          <ScrollMotionGod slogan={godSlogan} />
+          <ScrollMotionTime slogan={timeSlogan} />
+          <ScrollMotionPlace slogan={placeSlogan} />
+          <ScrollMotionAppearance slogan={appearanceSlogan} />
+          <ScrollMotionWelcome
+            ref={welcomeRef}
+            scrollY={ScrollYWelcome}
+            slogan={welcomeSlogan}
+          />
+        </main>
+        <ScrollStatusTab fontColor="white" status={scrollStatus}>
+          {scrollStatus}
+          <ScrollStatusIndicator status={scrollStatus} />
+        </ScrollStatusTab>
+      </LazyMotion>
       <IntroBackground />
     </>
   );

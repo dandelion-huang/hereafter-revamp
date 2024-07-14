@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 
 import { cva, type VariantProps } from 'class-variance-authority';
-import { type HTMLMotionProps, motion } from 'framer-motion';
+import { type HTMLMotionProps, m } from 'framer-motion';
 
 import { cn } from '@/utils/misc';
 
@@ -29,7 +29,7 @@ export interface IntroSectionProps
 const IntroSection = forwardRef<HTMLElement, IntroSectionProps>(
   function IntroSection({ children, className, duration }, ref) {
     return (
-      <motion.section
+      <m.section
         ref={ref}
         initial={{ visibility: 'hidden', zIndex: -10 }}
         transition={{ delay: 0, duration: 0 }}
@@ -37,7 +37,7 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>(
         className={cn(introSectionVariants({ duration, className }))}
       >
         {children}
-      </motion.section>
+      </m.section>
     );
   }
 );

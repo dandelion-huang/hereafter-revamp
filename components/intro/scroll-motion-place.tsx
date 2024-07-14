@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
 import { Earth } from '@/components/animations/earth';
@@ -41,7 +41,7 @@ const ScrollMotionPlace = ({
   return (
     <IntroSection ref={placeRef} duration="short">
       <div className="fixed left-1/2 top-[40%] h-[396px] md:left-[80%] md:top-1/2 md:h-[600px] lg:left-2/3">
-        <motion.div
+        <m.div
           style={{
             scale: scalePlaceEarth,
             opacity: opacityPlace,
@@ -49,9 +49,9 @@ const ScrollMotionPlace = ({
           }}
         >
           <Earth />
-        </motion.div>
+        </m.div>
         <div className="absolute -left-[36px] top-[1.7%] -translate-x-1/2 -translate-y-1/2 md:-left-[50px] md:-top-[3%]">
-          <motion.div
+          <m.div
             className="relative aspect-[144/199] w-40 scale-[0.2] md:w-[240px]"
             style={{ opacity: opacityPlacePin }}
           >
@@ -60,16 +60,15 @@ const ScrollMotionPlace = ({
               alt="Location pin"
               fill
             />
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             className="absolute left-0 top-[1.6%] w-full"
             style={{ scale: scalePlacePinInner, opacity: opacityPlacePin }}
           >
             <div className="aspect-[4/5] w-full rounded-[50%] bg-white" />
-          </motion.div>
+          </m.div>
         </div>
       </div>
-
       <IntroWording
         opacity={opacityPlace}
         vertical="center"
