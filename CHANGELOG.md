@@ -4,6 +4,29 @@
 
 或許應該說是開發日誌比較妥適。
 
+## 2024-07-14
+
+- 調整了 intro page 中 place 和 appearance 的排版，讓 mobile 版的視覺體驗更好。
+  > 我經常使用的設備是 iphone 14，也就是 390px 的寬度。因此微調了 animations 的尺寸。
+  > 這也能幫助 mobiles 版在 viewport 較小時，animations 不會和 skip 重疊。
+  > 小幅度調整了 svg man 的位置，使其和 svg man in the mirror 不會重疊。
+- 為 pseudo-element 移除不必要的 tailwindcss 樣式 `content`。
+- 使用 @next/bundle-analyzer 來分析 bundle size。
+  > 配合 next-compose-plugins 使用。
+- 啟用 @vercel/analytics。
+- 修正一些 PageSpeed Insights 報告中提出的問題。
+  - metadata 相關：
+    > 修正 `authors` 誤植為 `author` 的問題。
+    > 修正 `openGraph` 的 `images` 設置錯誤的問題。
+    > 修正 `canonical` 不應該使用相對路徑的問題。
+    > 修正 `alternates` 中的 `languages` 產生無效 `hreflang` 的問題。
+  - SEO 相關：
+    > 先開出 lobby page 以避免 best practices 部分被扣分。
+- 利用將 `motion` 改為 `m` 並配合 `LazyMotion` 來減少 framer-motion 的 bundle size。
+  > ref: [Reduce bundle size | Framer for Developers](https://www.framer.com/motion/guide-reduce-bundle-size/)
+  > /[locale] - 60.3 kB -> 35.1 kB
+  > other shared chunks (total) - 1.92 -> 1.99 kB
+
 ## 2024-07-13
 
 - 將 pnpm 升級到 9.5.0。
@@ -17,7 +40,7 @@
   > 這個 webkit 行為大幅優化了效能，卻會導致字體和圖片模糊。
 - 修復在 mobile 版 css animation 會閃爍 (flickering) 的問題。
 - 將 `useScrollStatus` 抽取成一個 customed hook。
-- 除了以上的狀況，在不影響語意的情況下進行 refactoring。
+- 除了以上的狀況，在不影響語意的情況下進行 styling refactoring。
 
 ## 2024-07-12
 
@@ -37,7 +60,7 @@
 
 ## 2024-06-29
 
-- 啟用 Vercel 提供的 Speed Insights 服務。
+- 啟用 @vercel/speed-insights。
 
 ## 2024-06-28
 
