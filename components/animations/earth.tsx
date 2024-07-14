@@ -7,7 +7,7 @@ const Earth = () => {
     <div
       className={cn(
         earthClasses,
-        'size-[400px] overflow-hidden bg-[#4fc1e9] -translate-x-1/2 -translate-y-1/2 sm:size-[600px]'
+        'size-[363px] overflow-hidden bg-[#4fc1e9] -translate-x-1/2 -translate-y-1/2 sm:size-[600px]'
       )}
     >
       <div className="absolute h-full w-[200%] animate-[earth-rotate_8s_linear_infinite]">

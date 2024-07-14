@@ -40,7 +40,7 @@ const ScrollMotionPlace = ({
 
   return (
     <IntroSection ref={placeRef} duration="short">
-      <div className="fixed left-1/2 top-[40%] h-[436px] md:left-[80%] md:top-1/2 md:h-[600px] lg:left-2/3">
+      <div className="fixed left-1/2 top-[40%] h-[396px] md:left-[80%] md:top-1/2 md:h-[600px] lg:left-2/3">
         <motion.div
           style={{
             scale: scalePlaceEarth,
@@ -50,9 +50,9 @@ const ScrollMotionPlace = ({
         >
           <Earth />
         </motion.div>
-        <div className="absolute -left-[32px] top-[1.8%] -translate-x-1/2 -translate-y-1/2 md:-left-[50px] md:-top-[3%]">
+        <div className="absolute -left-[36px] top-[1.7%] -translate-x-1/2 -translate-y-1/2 md:-left-[50px] md:-top-[3%]">
           <motion.div
-            className="relative aspect-[144/199] w-[180px] scale-[0.2] md:w-[240px]"
+            className="relative aspect-[144/199] w-40 scale-[0.2] md:w-[240px]"
             style={{ opacity: opacityPlacePin }}
           >
             <Image
