@@ -31,7 +31,7 @@ const IntroBackground = () => {
           src="/assets/images/background/nebula-2.svg"
           alt="Nebula"
           fill
-          loading="eager"
+          priority
         />
       </div>
       <div
