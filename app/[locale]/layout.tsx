@@ -40,6 +40,12 @@ export async function generateMetadata({
       },
       locale: t('openGraph.locale'),
     },
+    alternates: {
+      canonical: t('alternates.canonical'),
+      languages: t('alternates.languages', {
+        returnObjects: true,
+      }) satisfies Record<Locale, string>,
+    },
   };
 }
 
