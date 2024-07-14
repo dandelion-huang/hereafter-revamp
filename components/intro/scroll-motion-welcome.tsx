@@ -39,7 +39,7 @@ const ScrollMotionWelcome = forwardRef<
             translateY: translateYWelcomeWording,
           }}
         >
-          <div className="relative aspect-[369/320] w-[300px] before:absolute before:aspect-square before:w-full before:animate-pulse before:rounded-full before:bg-gradient-radial before:from-primary/50 before:via-secondary before:to-secondary/50 before:blur-2xl before:content-[''] sm:w-[400px]">
+          <div className="relative aspect-[369/320] w-[300px] before:absolute before:aspect-square before:w-full before:animate-pulse before:rounded-full before:bg-gradient-radial before:from-primary/50 before:via-secondary before:to-secondary/50 before:blur-2xl sm:w-[400px]">
             <Image
               src="/assets/images/hereafter-logo.svg"
               alt="HereAfter logo"
