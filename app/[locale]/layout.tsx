@@ -26,6 +26,12 @@ export async function generateMetadata({
   params: { locale: Locale };
 }>): Promise<Metadata> {
   const { t } = await serverSideTranslation(locale, 'metadata');
+  const { languages: _languages } = t('alternates', {
+    returnObjects: true,
+  }) satisfies {
+    languages: Record<Locale, string>;
+  };
+  const { [locale]: canonical, ...languages } = _languages;
 
   return {
     ...defaultMetadata,
@@ -38,13 +44,11 @@ export async function generateMetadata({
         ...defaultMetadata.openGraph.images,
         alt: t('title'),
       },
-      locale: t('openGraph.locale'),
+      locale,
     },
     alternates: {
-      canonical: t('alternates.canonical'),
-      languages: t('alternates.languages', {
-        returnObjects: true,
-      }) satisfies Record<Locale, string>,
+      canonical,
+      languages,
     },
   };
 }

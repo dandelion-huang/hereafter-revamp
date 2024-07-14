@@ -30,8 +30,8 @@
     "type": "website"
   },
   "alternates": {
-    "canonical": "/en-US",
     "languages": {
+      "en-US": "/en-US",
       "zh-TW": "/zh-TW"
     }
   }

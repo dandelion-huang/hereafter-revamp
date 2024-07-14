@@ -3,11 +3,5 @@
   "description": "來生投放所 - 為你規劃更好的來生",
   "openGraph": {
     "locale": "zh-TW"
-  },
-  "alternates": {
-    "canonical": "/zh-TW",
-    "languages": {
-      "en-US": "/en-US"
-    }
   }
 }
