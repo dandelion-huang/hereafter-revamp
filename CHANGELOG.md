@@ -19,7 +19,7 @@
     > 修正 `authors` 誤植為 `author` 的問題。
     > 修正 `openGraph` 的 `images` 設置錯誤的問題。
     > 修正 `canonical` 不應該使用相對路徑的問題。
-    > 修正 `alternates` 中的 `languages` 產生無效 `hreflang` 的問題。
+    > 修正 `languages` 產生無效 `hreflang` 的問題。
   - SEO 相關：
     > 先開出 lobby page 以避免 best practices 部分被扣分。
 - 利用將 `motion` 改為 `m` 並配合 `LazyMotion` 來減少 framer-motion 的 bundle size。
