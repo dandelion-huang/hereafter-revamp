@@ -42,6 +42,7 @@
       "warn",
       { "argsIgnorePattern": "^_" }
     ],
+    "import/no-unused-modules": "error",
     "import/order": [
       "error",
       {
@@ -80,6 +81,16 @@
       }
     ],
     "react/jsx-fragments": ["warn", "syntax"], // shorthand syntax for React fragments
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ],
+    "react/no-unused-prop-types": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "warn", // checks effect dependencies
