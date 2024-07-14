@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { getCookie } from 'cookies-next';
 import { dir } from 'i18next';
@@ -64,6 +65,7 @@ export default function AppLayout({
         <AppThemeProvider attribute="class" defaultTheme={theme}>
           {children}
         </AppThemeProvider>
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
