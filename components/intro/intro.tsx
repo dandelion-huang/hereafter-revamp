@@ -44,11 +44,7 @@ const Intro = ({
   return (
     <>
       <LazyMotion features={loadFeatures} strict>
-        <ScrollStatusTab
-          fontColor="highlight"
-          position="top"
-          status={scrollStatus}
-        >
+        <ScrollStatusTab fontColor="highlight" position="top">
           {scrollStatus === 'scroll' && (
             <CustomLink href="/lobby">skip</CustomLink>
           )}
@@ -65,7 +61,7 @@ const Intro = ({
             slogan={welcomeSlogan}
           />
         </main>
-        <ScrollStatusTab fontColor="white" status={scrollStatus}>
+        <ScrollStatusTab fontColor="white">
           {scrollStatus}
           <ScrollStatusIndicator status={scrollStatus} />
         </ScrollStatusTab>

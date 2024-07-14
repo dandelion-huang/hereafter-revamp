@@ -31,10 +31,10 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>(
     return (
       <m.section
         ref={ref}
+        className={cn(introSectionVariants({ duration, className }))}
         initial={{ visibility: 'hidden', zIndex: -10 }}
         transition={{ delay: 0, duration: 0 }}
         whileInView={{ visibility: 'visible', zIndex: 10 }}
-        className={cn(introSectionVariants({ duration, className }))}
       >
         {children}
       </m.section>

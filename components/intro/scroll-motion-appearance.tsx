@@ -77,9 +77,9 @@ const ScrollMotionAppearance = ({
               >
                 <div className="relative aspect-[135/155] w-20 md:w-[120px]">
                   <Image
-                    src="/assets/images/intro/man-in-the-mirror.svg"
                     alt="Man in the mirror"
                     fill
+                    src="/assets/images/intro/man-in-the-mirror.svg"
                   />
                 </div>
                 <div className="absolute bottom-[40px] left-[32%] md:bottom-[60px]">
@@ -91,9 +91,9 @@ const ScrollMotionAppearance = ({
                   >
                     <div className="relative aspect-[56/24] w-[34px] md:w-[51px]">
                       <Image
-                        src="/assets/images/intro/eyes.svg"
                         alt="Eyes"
                         fill
+                        src="/assets/images/intro/eyes.svg"
                       />
                     </div>
                     <m.div
@@ -103,9 +103,9 @@ const ScrollMotionAppearance = ({
                       }}
                     >
                       <Image
-                        src="/assets/images/intro/eyes-reflection.svg"
                         alt="Eyes reflection"
                         fill
+                        src="/assets/images/intro/eyes-reflection.svg"
                       />
                     </m.div>
                   </m.div>
@@ -117,9 +117,9 @@ const ScrollMotionAppearance = ({
                   }}
                 >
                   <Image
-                    src="/assets/images/intro/cat-ears.svg"
                     alt="Cat ears"
                     fill
+                    src="/assets/images/intro/cat-ears.svg"
                   />
                 </m.div>
               </m.div>
@@ -135,7 +135,7 @@ const ScrollMotionAppearance = ({
               translateY: translateAppearanceMan,
             }}
           >
-            <Image src="/assets/images/intro/man.svg" alt="Man" fill />
+            <Image alt="Man" fill src="/assets/images/intro/man.svg" />
           </m.div>
         </div>
       </m.div>

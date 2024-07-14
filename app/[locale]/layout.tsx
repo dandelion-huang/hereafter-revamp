@@ -65,10 +65,10 @@ export default function AppLayout({
 
   return (
     <html
-      suppressHydrationWarning
       className={cn(theme, 'scroll-smooth bg-bgc')}
       dir={dir(locale)}
       lang={locale}
+      suppressHydrationWarning
     >
       <body
         className={cn(

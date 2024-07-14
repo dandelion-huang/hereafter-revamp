@@ -15,10 +15,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/nebula-1.svg"
           alt="Nebula"
           fill
           priority
+          src="/assets/images/background/nebula-1.svg"
         />
       </div>
       <div
@@ -28,10 +28,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/nebula-2.svg"
           alt="Nebula"
           fill
           priority
+          src="/assets/images/background/nebula-2.svg"
         />
       </div>
       <div
@@ -41,10 +41,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-1.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-1.svg"
         />
       </div>
       <div
@@ -54,10 +54,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-1.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-1.svg"
         />
       </div>
       <div
@@ -67,10 +67,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-2.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-2.svg"
         />
       </div>
       <div
@@ -80,10 +80,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-3.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-3.svg"
         />
       </div>
       <div
@@ -93,10 +93,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-4.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-4.svg"
         />
       </div>
       <div
@@ -106,10 +106,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-5.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-5.svg"
         />
       </div>
       <div
@@ -119,10 +119,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-3.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-3.svg"
         />
       </div>
       <div
@@ -132,10 +132,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-6.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-6.svg"
         />
       </div>
       <div
@@ -145,10 +145,10 @@ const IntroBackground = () => {
         )}
       >
         <Image
-          src="/assets/images/background/star-4.svg"
           alt="Star"
           fill
           loading="eager"
+          src="/assets/images/background/star-4.svg"
         />
       </div>
     </Background>

@@ -27,7 +27,7 @@ const ScrollStatusIndicator = ({
 }: ScrollStatusIndicatorProps) => {
   return (
     <div className={cn(scrollStatusIndicatorVariants({ status, className }))}>
-      <Image src="/assets/images/arrow-down.svg" alt="arrow down" fill />
+      <Image alt="arrow down" fill src="/assets/images/arrow-down.svg" />
     </div>
   );
 };

@@ -67,18 +67,18 @@ const ScrollMotionGod = ({
               }}
             >
               <Image
-                src="/assets/images/intro/god-hand.svg"
                 alt="God hand"
                 fill
+                src="/assets/images/intro/god-hand.svg"
               />
             </m.div>
           </div>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="relative aspect-[278/325] w-[180px] sm:w-[280px]">
               <Image
-                src="/assets/images/intro/god-portrait.svg"
                 alt="God portrait"
                 fill
+                src="/assets/images/intro/god-portrait.svg"
               />
             </div>
           </div>
@@ -88,9 +88,9 @@ const ScrollMotionGod = ({
               style={{ opacity: opacityGodGlass }}
             >
               <Image
-                src="/assets/images/intro/glass-stable.svg"
                 alt="God glass"
                 fill
+                src="/assets/images/intro/glass-stable.svg"
               />
             </m.div>
           </div>
@@ -103,9 +103,9 @@ const ScrollMotionGod = ({
               }}
             >
               <Image
-                src="/assets/images/intro/glass-spill.svg"
                 alt="God glass"
                 fill
+                src="/assets/images/intro/glass-spill.svg"
               />
             </m.div>
           </div>

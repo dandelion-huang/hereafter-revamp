@@ -56,9 +56,9 @@ const ScrollMotionPlace = ({
             style={{ opacity: opacityPlacePin }}
           >
             <Image
-              src="/assets/images/intro/location-pin.svg"
               alt="Location pin"
               fill
+              src="/assets/images/intro/location-pin.svg"
             />
           </m.div>
           <m.div
@@ -71,8 +71,8 @@ const ScrollMotionPlace = ({
       </div>
       <IntroWording
         opacity={opacityPlace}
-        vertical="center"
         translateY={translateYPlaceWording}
+        vertical="center"
       >
         {slogan}
       </IntroWording>

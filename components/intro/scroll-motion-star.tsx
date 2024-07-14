@@ -77,9 +77,9 @@ const ScrollMotionStar = ({
             }}
           >
             <Image
-              src="/assets/images/intro/star-spark.svg"
               alt="Star spark"
               fill
+              src="/assets/images/intro/star-spark.svg"
             />
           </m.div>
         </div>

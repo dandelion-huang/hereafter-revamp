@@ -40,8 +40,8 @@ const ScrollMotionTime = ({
       </div>
       <IntroWording
         opacity={opacityTime}
-        vertical="center"
         translateY={translateYTimeWording}
+        vertical="center"
       >
         {slogan}
       </IntroWording>

@@ -42,9 +42,9 @@ const ScrollMotionWelcome = forwardRef<
           <div className="relative aspect-[369/320] w-[300px] sm:w-[400px]">
             <div className="absolute aspect-square w-full animate-pulse rounded-full bg-gradient-radial from-primary/50 via-secondary to-secondary/50 blur-2xl" />
             <Image
-              src="/assets/images/hereafter-logo.svg"
               alt="HereAfter logo"
               fill
+              src="/assets/images/hereafter-logo.svg"
             />
           </div>
         </m.div>

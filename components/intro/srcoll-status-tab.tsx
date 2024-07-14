@@ -2,7 +2,6 @@
 
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { type ScrollStatus } from '@/hooks/useScrollStatus';
 import { cn } from '@/utils/misc';
 
 const scrollStatusTabVariants = cva('fixed z-50 w-full font-semibold', {
@@ -27,7 +26,6 @@ export interface ScrollStatusTabProps
     VariantProps<typeof scrollStatusTabVariants> {
   children?: React.ReactNode;
   className?: string;
-  status: ScrollStatus;
 }
 
 const ScrollStatusTab = ({
