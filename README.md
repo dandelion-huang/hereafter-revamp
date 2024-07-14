@@ -29,12 +29,12 @@ Node.js 版本：20.14.0
 - **Next.js**: full-stack framework
 - **TypeScript**: type checking
 - **ZOD**: runtime validation
-- **i18next & React-i18next**: internationalization
+- **i18next & React-i18next**: internationalization (i18n)
 - **cookies-next**: universal cookie handling
 - **next-themes**: theming
 - **framer-motion**: animation
 - **class-variance-authority**: creating variants
-- **Tailwind CSS**: styling
+- **Tailwind CSS and tailwindcss-3d**: styling
 - **PostCSS and Autoprefixer**: post-processing CSS
 - **ESLint**: linting
 - **Prettier**: code formatting
@@ -42,7 +42,10 @@ Node.js 版本：20.14.0
 - **Commitlint**: commit message linting (conventional commits)
 - **MarkdownLint**: markdown linting
 - **Stylelint & stylelint-order**: style linting
-- **SVGO** for optimizing SVG images
+- **SVGO**: SVG optimization
+- **@next/bundle-analyzer**: bundle size analysis
+- **@vercel/analytics**: web analytics collecting
+- **@vercel/speed-insights**: speed insights analysis
 
 ## 網頁聲明（Disclaimer）
 
@@ -83,5 +86,6 @@ Node.js 版本：20.14.0
 - [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
 - [File Nesting Updater](https://marketplace.visualstudio.com/items?itemName=antfu.file-nesting)
 - [Supermaven](https://supermaven.com/)
-- [lclhost](https://lcl.host/)
+- [lcl.host](https://lcl.host/)
 - [Certbot](https://certbot.eff.org/)
+- [Bundlephobia](https://bundlephobia.com/)

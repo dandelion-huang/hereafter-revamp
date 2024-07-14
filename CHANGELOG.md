@@ -13,8 +13,14 @@
 - 為 pseudo-element 移除不必要的 tailwindcss 樣式 `content`。
 - 使用 @next/bundle-analyzer 來分析 bundle size。
   > 配合 next-compose-plugins 使用。
+  > 也可以配合 source-map-explorer 使用（先略過，可以之後再詳細分析）。
 - 啟用 @vercel/analytics。
 - 修正一些 PageSpeed Insights 報告中提出的問題。
+  - 調整了 intro page welcome banner 中的 DOM 結構來避免 non-composited css animations。
+  - 關於 reduce unused css 以及 failed to find font override 的問題：
+    > 這兩個問題應該可以等官方修復。
+    > ref: [How to fix link preload warning in Next.js app? · vercel/next.js · Discussion #49607 · GitHub](https://github.com/vercel/next.js/discussions/49607)
+    > ref: [[NEXT-1192] Failed to find font override - next/font/google · Issue #47115 · vercel/next.js](https://github.com/vercel/next.js/issues/47115)
   - metadata 相關：
     > 修正 `authors` 誤植為 `author` 的問題。
     > 修正 `openGraph` 的 `images` 設置錯誤的問題。
@@ -26,6 +32,7 @@
   > ref: [Reduce bundle size | Framer for Developers](https://www.framer.com/motion/guide-reduce-bundle-size/)
   > /[locale] - 60.3 kB -> 35.1 kB
   > other shared chunks (total) - 1.92 -> 1.99 kB
+- 實作了一個 component `CustomLink` 來封裝 Next.js `Link` 並預設提供 `prefetch={false}`。
 
 ## 2024-07-13
 
@@ -39,22 +46,23 @@
 - 修復了 scale 在 webkit mobile 版上由小放大會導致模糊的問題，改成先設定放大後的尺寸在 scale 縮小。
   > 這個 webkit 行為大幅優化了效能，卻會導致字體和圖片模糊。
 - 修復在 mobile 版 css animation 會閃爍 (flickering) 的問題。
-- 將 `useScrollStatus` 抽取成一個 customed hook。
+- 將 `useScrollStatus` 抽取成一個 custom hook。
 - 除了以上的狀況，在不影響語意的情況下進行 styling refactoring。
 
 ## 2024-07-12
 
-- 在使用 Next.js `<Image>` 的時候，有思考到 `role="presentation"`、`role="none"` 或 `aria-hidden="true"` 等 accessibility 的問題。
+- 在使用 Next.js `Image` 的時候，有思考到 `role="presentation"`、`role="none"` 或 `aria-hidden="true"` 等 accessibility 的問題。
   > 主要是在製作 component `Background` 的時候想到這個問題。
   > 但 intro page 中也有很多裝飾性的內容，但可能是會影響故事性的，這部分應該要透過 `alt` 來補足。所以先處理 component `Background` 的部分就好，使用 `aria-hidden="true"` 處理。
-  > 可以在初版完成後再考慮回來補足。
+  > 不需要同時使用 `role="presentation"` 和 `aria-hidden="true"`。
+  > 可以在初版完成後再考慮回來完善 accessibility。
 - intro page 的最後一個部分 welcome banner，考慮了很久都覺得因為文案的關係，原版的排版在 RWD 上找不到妥善的方案，因此直接調整排版。
   > 這部分的排版等做完 component `Button` 後還會回來調整，因為 intro page 進入 lobby page 的 ui 都會使用到。
 
 ## 2024-06-30
 
 - 原本使用 react-cookie 處理 client side cookie，現在統一改成使用 cookies-next 來處理。
-  > 這樣可以獲得一致的 API 介面，同時自己撰寫 customed hook 處理 client side cookie。
+  > 這樣可以獲得一致的 API 介面，同時自己撰寫 custom hook 處理 client side cookie。
 - 使用 next-themes 來實作明暗主題。
 - 使用 class-variance-authority 來實作 variants。
 
@@ -67,7 +75,7 @@
 - 使用 i18next、react-i18next、@formatjs/intl-localematcher 和 negotiator 等來實作 i18n。
   > 路由的 locale 部分採用 ISO 3166 規範，並透過 cookie 來紀錄預設值。
 - 使用 zod 進行 runtime validation。
-- 使用 Anchor 提供的 lclhost 服務來提供開發環境的 https 協定。
+- 使用 Anchor 提供的 [lcl.host](https://lcl.host/) 服務來提供開發環境的 https 協定。
 
 ## 2024-05-26
 
