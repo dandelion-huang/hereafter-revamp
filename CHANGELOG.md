@@ -12,8 +12,8 @@
   > 小幅度調整了 svg man 的位置，使其和 svg man in the mirror 不會重疊。
 - 為 pseudo-element 移除不必要的 tailwindcss 樣式 `content`。
 - 使用 @next/bundle-analyzer 來分析 bundle size。
-  > 配合 next-compose-plugins 使用。
-  > 也可以配合 source-map-explorer 使用（先略過，可以之後再詳細分析）。
+  - 配合 next-compose-plugins 使用。
+    > 也可以配合 source-map-explorer 使用（先略過，可以之後再詳細分析）。
 - 啟用 @vercel/analytics。
 - 修正一些 PageSpeed Insights 報告中提出的問題。
   - 調整了 intro page welcome banner 中的 DOM 結構來避免 non-composited css animations。
@@ -22,10 +22,10 @@
     > ref: [How to fix link preload warning in Next.js app? · vercel/next.js · Discussion #49607 · GitHub](https://github.com/vercel/next.js/discussions/49607)
     > ref: [[NEXT-1192] Failed to find font override - next/font/google · Issue #47115 · vercel/next.js](https://github.com/vercel/next.js/issues/47115)
   - metadata 相關：
-    > 修正 `authors` 誤植為 `author` 的問題。
-    > 修正 `openGraph` 的 `images` 設置錯誤的問題。
-    > 修正 `canonical` 不應該使用相對路徑的問題。
-    > 修正 `languages` 產生無效 `hreflang` 的問題。
+    - 修正 `authors` 誤植為 `author` 的問題。
+    - 修正 `openGraph` 的 `images` 設置錯誤的問題。
+    - 修正 `canonical` 不應該使用相對路徑的問題。
+    - 修正 `languages` 產生無效 `hreflang` 的問題。
   - SEO 相關：
     > 先開出 lobby page 以避免 best practices 部分被扣分。
 - 利用將 `motion` 改為 `m` 並配合 `LazyMotion` 來減少 framer-motion 的 bundle size。
@@ -33,6 +33,10 @@
   > /[locale] - 60.3 kB -> 35.1 kB
   > other shared chunks (total) - 1.92 -> 1.99 kB
 - 實作了一個 component `CustomLink` 來封裝 Next.js `Link` 並預設提供 `prefetch={false}`。
+- 更新 eslint 相關的設定：
+  - `import/no-unused-modules`: error。
+  - `react/jsx-sort-props`: warn。
+  - `react/no-unused-prop-types`: error。
 
 ## 2024-07-13
 
@@ -73,7 +77,7 @@
 ## 2024-06-28
 
 - 使用 i18next、react-i18next、@formatjs/intl-localematcher 和 negotiator 等來實作 i18n。
-  > 路由的 locale 部分採用 ISO 3166 規範，並透過 cookie 來紀錄預設值。
+  - 路由的 locale 部分採用 ISO 3166 規範，並透過 cookie 來紀錄預設值。
 - 使用 zod 進行 runtime validation。
 - 使用 Anchor 提供的 [lcl.host](https://lcl.host/) 服務來提供開發環境的 https 協定。
 
