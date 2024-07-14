@@ -3,8 +3,8 @@
 import { useRef } from 'react';
 
 import { LazyMotion, useScroll } from 'framer-motion';
-import Link from 'next/link';
 
+import { CustomLink } from '@/components/custom/custom-link';
 import { IntroBackground } from '@/components/intro/intro-background';
 import { ScrollMotionAppearance } from '@/components/intro/scroll-motion-appearance';
 import { ScrollMotionGod } from '@/components/intro/scroll-motion-god';
@@ -49,7 +49,9 @@ const Intro = ({
           position="top"
           status={scrollStatus}
         >
-          {scrollStatus === 'scroll' ? <Link href="/lobby">skip</Link> : ''}
+          {scrollStatus === 'scroll' && (
+            <CustomLink href="/lobby">skip</CustomLink>
+          )}
         </ScrollStatusTab>
         <main>
           <ScrollMotionStar slogan={starSlogan} />
