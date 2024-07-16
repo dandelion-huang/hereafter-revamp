@@ -2,83 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --black-rgb: 0, 0, 0;
-  --white-rgb: 255, 255, 255;
-  --transparent-rgba: 0, 0, 0, 0;
-  --primary-rgb: 227, 132, 242;
-  --secondary-rgb: 149, 135, 225;
-  --action-rgb: 206, 89, 231;
-  --alert-rgb: 255, 82, 186;
-  --disabled-rgb: 235, 232, 250;
-  --highlight-rgb: 243, 245, 159;
-  --accent-blue-rgb: 129, 168, 224;
-  --accent-green-rgb: 185, 222, 210;
-  --background-light-rgb: 237, 239, 247;
-  --background-light-to-rgb: 219, 224, 237;
-  --background-dark-rgb: 60, 59, 103;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
 }
 
-.light {
-  --background-rgb: var(--background-light-rgb);
-  --background-to-rgb: var(--background-light-to-rgb);
-  --background-nav-rgb: var(--background-dark-rgb);
-  --header-rgb: var(--background-dark-rgb);
-  --background-header-decoration-rgba: var(--highlight-rgb), 0.6;
-  --main-accent-rgba: var(--accent-blue-rgb);
-  --main-primary-rgba: var(--primary-rgb);
-  --main-secondary-rgba: var(--secondary-rgb);
-  --main-title-accent-rgb: var(--white-rgb);
-  --main-title-primary-rgb: var(--white-rgb);
-  --main-title-secondary-rgb: var(--white-rgb);
-  --background-main-rgba: var(--white-rgb), 0.333;
-  --background-main-blur-rgba: var(--transparent-rgba);
-  --background-gooddeed-card-rgba: var(--white-rgb), 0.5;
-  --background-gooddeed-card-btn-rgba: var(--white-rgb), 0.188;
-  --background-member-card-rgba: var(--white-rgb), 0.459;
-  --background-avatar-maker-rgba: 129, 7, 225, 0.2;
-  --background-avatar-maker-to-rgba: var(--white-rgb), 0.4;
-  --border-avatar-rgb: var(--background-dark-rgb);
-  --background-showcase-card-rgba: 129, 7, 225, 0.2;
-  --comment-input-rgba: var(--black-rgb), 0.6;
-  --background-place-rgba: 149, 135, 225, 0.933;
-  --background-place-inner-rgba: var(--background-light-rgb), 0.7;
-  --border-place-card-rgba: var(--background-light-rgb), 0.7;
-  --background-reborn-cart-rgba: 186, 199, 217, 0.549;
-  --background-reborn-cart-inner-rgba: var(--white-rgb);
-}
-
-.dark {
-  --background-rgb: var(--background-dark-rgb);
-  --background-to-rgb: var(--background-dark-rgb);
-  --background-nav-rgb: 47, 44, 52;
-  --header-rgb: var(--white-rgb);
-  --background-header-decoration-rgba: var(--black-rgb), 0.2;
-  --main-accent-rgba: var(--black-rgb), 0.6;
-  --main-primary-rgba: var(--black-rgb), 0.6;
-  --main-secondary-rgba: var(--black-rgb), 0.6;
-  --main-title-accent-rgb: 184, 213, 255;
-  --main-title-primary-rgb: 241, 193, 248;
-  --main-title-secondary-rgb: 200, 190, 255;
-  --background-main-rgba: var(--black-rgb), 0.3;
-  --background-main-blur-rgba: var(--black-rgb);
-  --background-gooddeed-card-rgba: var(--black-rgb), 0.3;
-  --background-gooddeed-card-btn-rgba: var(--black-rgb), 0.2;
-  --background-member-card-rgba: var(--black-rgb), 0.145;
-  --background-avatar-maker-rgba: var(--black-rgb), 0.5;
-  --background-avatar-maker-to-rgba: var(--black-rgb), 0.5;
-  --border-avatar-rgb: 255, 233, 246;
-  --background-showcase-card-rgba: var(--transparent-rgba);
-  --comment-input-rgba: var(--white-rgb), 0.6;
-  --background-place-rgba: var(--black-rgb), 0.5;
-  --background-place-inner-rgba: var(--black-rgb), 0.5;
-  --border-place-card-rgba: var(--transparent-rgba);
-  --background-reborn-cart-rgba: var(--background-dark-rgb), 0.7;
-  --background-reborn-cart-inner-rgba: var(--black-rgb), 0.1;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
