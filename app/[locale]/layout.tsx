@@ -3,14 +3,15 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import { getCookie } from 'cookies-next';
 import { dir } from 'i18next';
 import { type Metadata } from 'next';
-
-import { DEFAULT_THEME as defaultTheme } from '@/constants/theme';
+import { headers } from 'next/headers';
 
 import { mPlusRounded1c, notoSans, notoSansTC } from '@/app/fonts';
 import { AppThemeProvider } from '@/components/context/theme';
 import { useTranslation as serverSideTranslation } from '@/i18n';
 import { i18nConfig } from '@/i18n/config';
 import defaultMetadata from '@/i18n/locales/en-US/metadata.json';
+import { isTwLocale } from '@/schemas/locale-schema';
+import { parseTheme } from '@/schemas/theme-schema';
 import { type Locale } from '@/types/i18n';
 import { cn } from '@/utils/misc';
 
@@ -61,12 +62,18 @@ export default function AppLayout({
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
-  const theme = getCookie('next-theme') ?? defaultTheme;
-  const isTwLocale = locale === i18nConfig.locales[1];
+  const route = headers().get('next-route');
+  const cookieTheme = getCookie('next-theme');
+  const theme =
+    route === 'intro'
+      ? 'dark'
+      : route === 'nextlife'
+        ? 'light'
+        : parseTheme(cookieTheme ?? '');
 
   return (
     <html
-      className={cn(theme, 'bg-bgc scroll-smooth')}
+      className={cn(theme, 'scroll-smooth')}
       dir={dir(locale)}
       lang={locale}
       suppressHydrationWarning
@@ -75,7 +82,7 @@ export default function AppLayout({
         className={cn(
           notoSans.variable,
           mPlusRounded1c.variable,
-          isTwLocale && notoSansTC.variable
+          isTwLocale(locale) && notoSansTC.variable
         )}
       >
         <AppThemeProvider attribute="class" defaultTheme={theme}>
