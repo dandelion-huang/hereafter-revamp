@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
-import { i18nConfig, type Locale } from '@/i18n/config';
+import { i18nConfig } from '@/i18n/config';
+import { type Locale } from '@/types/i18n';
 
 const { locales, defaultLocale } = i18nConfig;
 
@@ -12,7 +13,7 @@ export function isValidLocale(locale: string): locale is Locale {
   return localeSchema.safeParse(locale).success;
 }
 
-export function parseLocale(locale: string): Locale {
+export function parseLocale(locale: string) {
   const result = localeSchema.safeParse(locale);
 
   if (result.success) {

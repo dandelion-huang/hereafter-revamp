@@ -2,13 +2,13 @@ import { createInstance } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { initReactI18next } from 'react-i18next/initReactI18next';
 
+import { getOptions } from '@/i18n/config';
 import {
-  getOptions,
   type Locale,
   type Namespace,
   type Namespaces,
   type TranslationOptions,
-} from '@/i18n/config';
+} from '@/types/i18n';
 
 const initI18next = async (lng: Locale, ns?: Namespaces) => {
   const i18nInstance = createInstance();

@@ -11,14 +11,13 @@ import {
 } from 'react-i18next';
 
 import { useCookie } from '@/hooks/useCookie';
+import { getOptions, i18nConfig } from '@/i18n/config';
 import {
-  getOptions,
-  i18nConfig,
   type Locale,
   type Namespace,
   type Namespaces,
   type TranslationOptions,
-} from '@/i18n/config';
+} from '@/types/i18n';
 
 const { cookieName, locales } = i18nConfig;
 

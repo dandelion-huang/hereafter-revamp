@@ -1,6 +1,6 @@
 import { Intro as IntroWrapper } from '@/components/intro/intro';
 import { useTranslation as getServerSideTranslation } from '@/i18n';
-import { type Locale } from '@/i18n/config';
+import { type Locale } from '@/types/i18n';
 
 export default async function Intro({
   params: { locale },

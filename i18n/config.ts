@@ -1,26 +1,20 @@
 import {
-  COOKIE_NAME,
-  DEFAULT_NAMESPACE,
-  FALLBACK_LANGUAGE,
-  LANGUAGES,
-  LOCALE_EMOJIS,
-  NAMESPACES,
+  COOKIE_NAME as cookieName,
+  FALLBACK_LANGUAGE as defaultLocale,
+  DEFAULT_NAMESPACE as defaultNamespace,
+  LANGUAGES as locales,
+  LOCALE_EMOJIS as localesEmojis,
 } from '@/constants/i18n';
 
+import { type Locale, type Namespaces } from '@/types/i18n';
+
 export const i18nConfig = {
-  defaultLocale: FALLBACK_LANGUAGE,
-  locales: LANGUAGES,
-  localesEmojis: LOCALE_EMOJIS,
-  defaultNamespace: DEFAULT_NAMESPACE,
-  cookieName: COOKIE_NAME,
+  defaultLocale,
+  locales,
+  localesEmojis,
+  defaultNamespace,
+  cookieName,
 } as const;
-
-const { locales, defaultLocale, defaultNamespace } = i18nConfig;
-
-export type Locale = (typeof locales)[number];
-export type Namespace = (typeof NAMESPACES)[number];
-export type Namespaces = Namespace | Namespace[];
-export type TranslationOptions = { keyPrefix?: string };
 
 export function getOptions(
   lng: Locale = defaultLocale,

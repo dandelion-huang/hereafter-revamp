@@ -9,8 +9,9 @@ import { DEFAULT_THEME as defaultTheme } from '@/constants/theme';
 import { mPlusRounded1c, notoSans, notoSansTC } from '@/app/fonts';
 import { AppThemeProvider } from '@/components/context/theme';
 import { useTranslation as serverSideTranslation } from '@/i18n';
-import { i18nConfig, type Locale } from '@/i18n/config';
+import { i18nConfig } from '@/i18n/config';
 import defaultMetadata from '@/i18n/locales/en-US/metadata.json';
+import { type Locale } from '@/types/i18n';
 import { cn } from '@/utils/misc';
 
 import '@/styles/global.css';
@@ -65,7 +66,7 @@ export default function AppLayout({
 
   return (
     <html
-      className={cn(theme, 'scroll-smooth bg-bgc')}
+      className={cn(theme, 'bg-bgc scroll-smooth')}
       dir={dir(locale)}
       lang={locale}
       suppressHydrationWarning

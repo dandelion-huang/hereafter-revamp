@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import { THEMES as themes } from '@/constants/theme';
 
-import { type Theme } from '@/components/context/theme';
+import { type Theme } from '@/types/theme';
 
 export const themeSchema = z.enum(themes);
 

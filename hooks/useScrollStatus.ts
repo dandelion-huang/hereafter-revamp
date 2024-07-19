@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { type MotionValue } from 'framer-motion';
 
-export type ScrollStatus = 'scroll' | 'end';
+import { type ScrollStatus } from '@/types/scroll-status';
 
-const useScrollStatus = (
+function useScrollStatus(
   scrollMotionValue: MotionValue<number>,
   threshold: number
-): ScrollStatus => {
+) {
   const [status, setStatus] = useState<ScrollStatus>('scroll');
 
   useEffect(() => {
@@ -22,7 +22,6 @@ const useScrollStatus = (
         setStatus('scroll');
       }
     };
-
     const unsubscribe = scrollMotionValue.on('change', updateStatus);
 
     return () => {
@@ -31,6 +30,6 @@ const useScrollStatus = (
   }, [scrollMotionValue, status, threshold]);
 
   return status;
-};
+}
 
 export { useScrollStatus };
