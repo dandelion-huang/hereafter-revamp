@@ -40,7 +40,7 @@ function getLocaleAndRedirectUrl(
   if (pathnameLocale === '') {
     const locale = getLocale(request);
 
-    return [locale, `/${locale}`];
+    return [locale, pathnameRoute, `/${locale}`];
   }
 
   if (isSupportedLocale(pathnameLocale)) {
