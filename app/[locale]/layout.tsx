@@ -6,6 +6,8 @@ import { type Metadata } from 'next';
 import { headers } from 'next/headers';
 
 import { mPlusRounded1c, notoSans, notoSansTC } from '@/app/fonts';
+import { AppI18nProvider } from '@/components/context/i18n';
+import { AppRouterProvider } from '@/components/context/router';
 import { AppThemeProvider } from '@/components/context/theme';
 import { useTranslation as serverSideTranslation } from '@/i18n';
 import { i18nConfig } from '@/i18n/config';
@@ -85,9 +87,11 @@ export default function AppLayout({
           isTwLocale(locale) && notoSansTC.variable
         )}
       >
-        <AppThemeProvider attribute="class" defaultTheme={theme}>
-          {children}
-        </AppThemeProvider>
+        <AppRouterProvider>
+          <AppThemeProvider attribute="class" defaultTheme={theme}>
+            <AppI18nProvider locale={locale}>{children}</AppI18nProvider>
+          </AppThemeProvider>
+        </AppRouterProvider>
         <Analytics />
         <SpeedInsights />
       </body>
