@@ -4,7 +4,6 @@ import { useRef } from 'react';
 
 import { LazyMotion, useScroll } from 'framer-motion';
 
-import { CustomLink } from '@/components/custom/custom-link';
 import { IntroBackground } from '@/components/intro/intro-background';
 import { ScrollMotionAppearance } from '@/components/intro/scroll-motion-appearance';
 import { ScrollMotionGod } from '@/components/intro/scroll-motion-god';
@@ -14,7 +13,8 @@ import { ScrollMotionTime } from '@/components/intro/scroll-motion-time';
 import { ScrollMotionWelcome } from '@/components/intro/scroll-motion-welcome';
 import { ScrollStatusIndicator } from '@/components/intro/scroll-status-indicator';
 import { ScrollStatusTab } from '@/components/intro/srcoll-status-tab';
-import { useScrollStatus } from '@/hooks/useScrollStatus';
+import { CustomLink } from '@/components/ui/link';
+import { useScrollStatus } from '@/hooks/use-scroll-status';
 
 const loadFeatures = () =>
   import('@/components/intro/motion-features').then((res) => res.default);

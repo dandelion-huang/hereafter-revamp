@@ -11,7 +11,7 @@ import {
   COOKIE_NAME as cookieName,
 } from '@/constants/theme';
 
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@/hooks/use-theme';
 import { type Theme, type Themes } from '@/types/theme';
 
 type ThemeProviderProps = Omit<NextThemeProviderProps, 'themes'> & {

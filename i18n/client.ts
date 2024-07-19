@@ -10,7 +10,7 @@ import {
   useTranslation as useTranslationOrg,
 } from 'react-i18next';
 
-import { useCookie } from '@/hooks/useCookie';
+import { useCookie } from '@/hooks/use-cookie';
 import { getOptions, i18nConfig } from '@/i18n/config';
 import {
   type Locale,
