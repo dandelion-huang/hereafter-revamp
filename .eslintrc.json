@@ -72,7 +72,6 @@
     "object-shorthand": "warn",
     "prefer-const": "warn",
     "quote-props": ["warn", "as-needed"],
-    // React rules
     "prettier/prettier": "warn",
     "react/jsx-filename-extension": [
       "warn",
@@ -80,7 +79,7 @@
         "extensions": ["ts", "tsx"]
       }
     ],
-    "react/jsx-fragments": ["warn", "syntax"], // shorthand syntax for React fragments
+    "react/jsx-fragments": ["warn", "syntax"],
     "react/jsx-sort-props": [
       "warn",
       {
@@ -93,8 +92,8 @@
     "react/no-unused-prop-types": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react-hooks/exhaustive-deps": "warn", // checks effect dependencies
-    "react-hooks/rules-of-hooks": "error", // checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
     "sort-imports": [
       "warn",
       {
