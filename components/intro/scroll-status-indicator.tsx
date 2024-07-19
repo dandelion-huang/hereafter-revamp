@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { cn } from '@/utils/misc';
 
-const scrollStatusIndicatorVariants = cva('relative aspect-[36/47] w-4', {
+const scrollStatusIndicatorVariants = cva('', {
   variants: {
     status: {
       end: 'border-b-[2.5px] border-white',
@@ -26,8 +26,15 @@ const ScrollStatusIndicator = ({
   status,
 }: ScrollStatusIndicatorProps) => {
   return (
-    <div className={cn(scrollStatusIndicatorVariants({ status, className }))}>
-      <Image alt="arrow down" fill src="/assets/images/arrow-down.svg" />
+    <div
+      className={cn('relative aspect-[36/47] w-4 overflow-hidden', className)}
+    >
+      <Image
+        alt="arrow down"
+        className={cn(scrollStatusIndicatorVariants({ status }))}
+        fill
+        src="/assets/images/arrow-down.svg"
+      />
     </div>
   );
 };
