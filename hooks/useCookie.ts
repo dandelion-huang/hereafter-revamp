@@ -17,7 +17,6 @@ function useCookie(
   const [value, setValue] = useState<string | null>(
     () => getCookie(cookieName) ?? null
   );
-
   const updateCookie = useCallback(
     (newValue: string, options?: OptionsType) => {
       setCookie(cookieName, newValue, {
@@ -30,7 +29,6 @@ function useCookie(
     },
     [cookieName]
   );
-
   const deleteCookie = useCallback(() => {
     removeCookie(cookieName);
     setValue(null);
