@@ -3,17 +3,18 @@ import { getCookie, setCookie } from 'cookies-next';
 import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
 
-import { i18nConfig, type Locale } from '@/i18n/config';
+import { i18nConfig } from '@/i18n/config';
 import {
   firstSegmentWithSlashRegex,
   isValidLocale as isSupportedLocale,
   parseLocale,
   validLocaleRegex,
-} from '@/schemas/localeSchema';
+} from '@/schemas/locale-schema';
+import { type Locale } from '@/types/i18n';
 
 const { cookieName, locales, defaultLocale } = i18nConfig;
 
-function getLocale(request: NextRequest): Locale {
+function getLocale(request: NextRequest) {
   const cookieLocale = getCookie(cookieName, { req: request });
 
   if (cookieLocale && isSupportedLocale(cookieLocale)) {
@@ -29,9 +30,12 @@ function getLocale(request: NextRequest): Locale {
   return parseLocale(matchLocale(acceptLanguages, locales, defaultLocale));
 }
 
-function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
+function getLocaleAndRedirectUrl(
+  request: NextRequest
+): [Locale, string, string?] {
   const { pathname } = request.nextUrl;
   const pathnameLocale = pathname.split('/')[1];
+  const pathnameRoute = pathname.split('/')[2] ?? 'intro';
 
   if (pathnameLocale === '') {
     const locale = getLocale(request);
@@ -40,7 +44,7 @@ function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
   }
 
   if (isSupportedLocale(pathnameLocale)) {
-    return [pathnameLocale];
+    return [pathnameLocale, pathnameRoute];
   }
 
   const isValidLocale = validLocaleRegex.test(pathnameLocale);
@@ -59,6 +63,7 @@ function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
   if (supportedPathnameLocale) {
     return [
       supportedPathnameLocale,
+      pathnameRoute,
       pathname.replace(
         firstSegmentWithSlashRegex,
         `/${supportedPathnameLocale}`
@@ -71,21 +76,24 @@ function getLocaleAndRedirectUrl(request: NextRequest): [Locale, string?] {
     ? pathname.replace(firstSegmentWithSlashRegex, `/${locale}`)
     : `/${locale}${pathname}`;
 
-  return [locale, redirectUrl];
+  return [locale, pathnameRoute, redirectUrl];
 }
 
-export function middleware(request: NextRequest) {
-  const [locale, localeRedirectUrl] = getLocaleAndRedirectUrl(request);
+export function middleware(request: NextRequest): NextResponse<unknown> {
+  const [locale, pathnameRoute, localeRedirectUrl] =
+    getLocaleAndRedirectUrl(request);
 
   if (localeRedirectUrl) {
     return NextResponse.redirect(new URL(localeRedirectUrl, request.url));
   }
 
+  const response = NextResponse.next();
+
+  response.headers.set('next-route', pathnameRoute);
+
   const cookieLocale = getCookie(cookieName, { req: request });
 
   if (cookieLocale !== locale) {
-    const response = NextResponse.next();
-
     setCookie(cookieName, locale, {
       req: request,
       res: response,
@@ -96,6 +104,8 @@ export function middleware(request: NextRequest) {
 
     return response;
   }
+
+  return response;
 }
 
 export const config = {
