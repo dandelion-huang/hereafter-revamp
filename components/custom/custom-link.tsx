@@ -2,11 +2,17 @@ import Link, { type LinkProps } from 'next/link';
 
 export interface CustomLinkProps extends LinkProps {
   children?: React.ReactNode;
+  className?: string;
 }
 
-const CustomLink = ({ children, href, ...props }: CustomLinkProps) => {
+const CustomLink = ({
+  children,
+  className,
+  href,
+  ...props
+}: CustomLinkProps) => {
   return (
-    <Link href={href} prefetch={false} {...props}>
+    <Link className={className} href={href} prefetch={false} {...props}>
       {children}
     </Link>
   );
