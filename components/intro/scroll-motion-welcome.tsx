@@ -13,7 +13,7 @@ import Image from 'next/image';
 import { IntroSection } from '@/components/intro/intro-section';
 import { IntroWording } from '@/components/intro/intro-wording';
 
-export interface ScrollMotionWelcomeProps extends HTMLMotionProps<'div'> {
+interface ScrollMotionWelcomeProps extends HTMLMotionProps<'div'> {
   slogan: string;
   scrollY: MotionValue<number>;
 }
@@ -62,3 +62,4 @@ const ScrollMotionWelcome = forwardRef<
 ScrollMotionWelcome.displayName = 'ScrollMotionWelcome';
 
 export { ScrollMotionWelcome };
+export type { ScrollMotionWelcomeProps };

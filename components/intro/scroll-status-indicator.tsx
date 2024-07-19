@@ -15,7 +15,7 @@ const scrollStatusIndicatorVariants = cva('', {
   },
 });
 
-export interface ScrollStatusIndicatorProps
+interface ScrollStatusIndicatorProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof scrollStatusIndicatorVariants> {
   className?: string;
@@ -40,3 +40,4 @@ const ScrollStatusIndicator = ({
 };
 
 export { ScrollStatusIndicator };
+export type { ScrollStatusIndicatorProps };

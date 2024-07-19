@@ -18,7 +18,7 @@ const introWordingVariants = cva('fixed w-full', {
   },
 });
 
-export interface IntroWordingProps
+interface IntroWordingProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof introWordingVariants> {
   children?: React.ReactNode;
@@ -50,3 +50,4 @@ const IntroWording = ({
 };
 
 export { IntroWording };
+export type { IntroWordingProps };

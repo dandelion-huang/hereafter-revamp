@@ -16,7 +16,7 @@ const scrollStatusTabVariants = cva('fixed z-50 w-full font-semibold', {
   },
 });
 
-export interface ScrollStatusTabProps
+interface ScrollStatusTabProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof scrollStatusTabVariants> {
   children?: React.ReactNode;
@@ -38,3 +38,4 @@ const ScrollStatusTab = ({
 };
 
 export { ScrollStatusTab };
+export type { ScrollStatusTabProps };

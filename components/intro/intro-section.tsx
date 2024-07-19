@@ -19,7 +19,7 @@ const introSectionVariants = cva('w-full', {
   },
 });
 
-export interface IntroSectionProps
+interface IntroSectionProps
   extends HTMLMotionProps<'section'>,
     VariantProps<typeof introSectionVariants> {
   children?: React.ReactNode;
@@ -44,3 +44,4 @@ const IntroSection = forwardRef<HTMLElement, IntroSectionProps>(
 IntroSection.displayName = 'IntroSection';
 
 export { IntroSection };
+export type { IntroSectionProps };

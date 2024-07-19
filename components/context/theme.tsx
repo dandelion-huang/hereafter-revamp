@@ -52,3 +52,4 @@ const AppThemeProviderHelper = () => {
 };
 
 export { AppThemeProvider };
+export type { AppThemeProviderProps };
