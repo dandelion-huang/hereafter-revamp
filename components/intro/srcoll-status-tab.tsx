@@ -6,17 +6,12 @@ import { cn } from '@/utils/misc';
 
 const scrollStatusTabVariants = cva('fixed z-50 w-full font-semibold', {
   variants: {
-    fontColor: {
-      highlight: 'text-highlight',
-      white: 'text-white',
-    },
     position: {
       bottom: 'bottom-8',
       top: 'top-8',
     },
   },
   defaultVariants: {
-    fontColor: 'white',
     position: 'bottom',
   },
 });
@@ -31,16 +26,11 @@ export interface ScrollStatusTabProps
 const ScrollStatusTab = ({
   children,
   className,
-  fontColor,
   position,
 }: ScrollStatusTabProps) => {
   return (
-    <div
-      className={cn(
-        scrollStatusTabVariants({ fontColor, position, className })
-      )}
-    >
-      <div className="container flex items-center justify-end gap-2 overflow-hidden pr-8 text-right">
+    <div className={cn(scrollStatusTabVariants({ position, className }))}>
+      <div className="container flex items-center justify-end gap-2 text-right lg:px-16">
         {children}
       </div>
     </div>

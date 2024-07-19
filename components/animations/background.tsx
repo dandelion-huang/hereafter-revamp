@@ -1,34 +1,19 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-
 import { cn } from '@/utils/misc';
 
-const backgroundVariants = cva(
-  'fixed top-0 -z-50 min-h-svh w-full bg-gradient-to-b from-bgc to-bgc-to',
-  {
-    variants: {
-      theme: {
-        dark: 'dark',
-        light: 'light',
-      },
-    },
-    defaultVariants: {
-      theme: 'dark',
-    },
-  }
-);
-
-export interface BackgroundProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof backgroundVariants> {
+const Background = ({
+  children,
+  className,
+}: Readonly<{
   children?: React.ReactNode;
   className?: string;
-}
-
-const Background = ({ children, className, theme }: BackgroundProps) => {
+}>) => {
   return (
     <div
       aria-hidden="true"
-      className={cn(backgroundVariants({ theme, className }))}
+      className={cn(
+        'fixed top-0 -z-50 min-h-dvh w-full bg-gradient-to-b from-background to-background-to',
+        className
+      )}
     >
       {children}
     </div>
