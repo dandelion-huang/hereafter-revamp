@@ -19,7 +19,7 @@ const ScrollMotionTime = ({
     offset: ['start end', 'end end'],
   });
   const opacityTime = useTransform(ScrollYTime, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scaleTimeClock = useTransform(ScrollYTime, [0.5, 1], [1, 5]);
+  const scaleTimeClock = useTransform(ScrollYTime, [0.5, 1], [0.2, 1]);
   const translateYTimeWording = useTransform(
     ScrollYTime,
     [0.2, 1],
