@@ -1,6 +1,6 @@
 import Link, { type LinkProps } from 'next/link';
 
-export interface CustomLinkProps extends LinkProps {
+interface CustomLinkProps extends LinkProps {
   children?: React.ReactNode;
   className?: string;
 }
@@ -19,3 +19,4 @@ const CustomLink = ({
 };
 
 export { CustomLink };
+export type { CustomLinkProps };
