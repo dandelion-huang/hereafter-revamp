@@ -3,13 +3,24 @@
 import { useEffect } from 'react';
 
 import { setCookie } from 'cookies-next';
-import { ThemeProvider } from 'next-themes';
-import { type ThemeProviderProps } from 'next-themes/dist/types';
+import { ThemeProvider as NextThemeProvider } from 'next-themes';
+import { type ThemeProviderProps as NextThemeProviderProps } from 'next-themes/dist/types';
 
-import { COOKIE_NAME as cookieName } from '@/constants/theme';
+import {
+  THEMES as _themes,
+  COOKIE_NAME as cookieName,
+} from '@/constants/theme';
 
 import { useTheme } from '@/hooks/useTheme';
-import { type Theme } from '@/types/theme';
+import { type Theme, type Themes } from '@/types/theme';
+
+type ThemeProviderProps = Omit<NextThemeProviderProps, 'themes'> & {
+  themes: Themes;
+};
+
+const ThemeProvider = ({ themes, ...props }: ThemeProviderProps) => {
+  return <NextThemeProvider themes={[...themes]} {...props} />;
+};
 
 type AppThemeProviderProps = Omit<ThemeProviderProps, 'themes' | 'theme'> & {
   theme?: Theme;
@@ -17,7 +28,7 @@ type AppThemeProviderProps = Omit<ThemeProviderProps, 'themes' | 'theme'> & {
 
 const AppThemeProvider = ({ children, ...props }: AppThemeProviderProps) => {
   return (
-    <ThemeProvider enableColorScheme={false} {...props}>
+    <ThemeProvider enableColorScheme={false} themes={_themes} {...props}>
       <AppThemeProviderHelper />
       {children}
     </ThemeProvider>
