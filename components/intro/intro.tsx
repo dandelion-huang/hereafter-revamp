@@ -20,11 +20,11 @@ const loadFeatures = () =>
   import('@/components/intro/motion-features').then((res) => res.default);
 
 const Intro = ({
-  starSlogan,
-  godSlogan,
-  timeSlogan,
-  placeSlogan,
   appearanceSlogan,
+  godSlogan,
+  placeSlogan,
+  starSlogan,
+  timeSlogan,
   welcomeSlogan,
 }: Readonly<{
   appearanceSlogan: string;
@@ -44,9 +44,14 @@ const Intro = ({
   return (
     <>
       <LazyMotion features={loadFeatures} strict>
-        <ScrollStatusTab fontColor="highlight" position="top">
+        <ScrollStatusTab position="top">
           {scrollStatus === 'scroll' && (
-            <CustomLink href="/lobby">skip</CustomLink>
+            <CustomLink
+              className="-mr-2 -mt-1 px-2 py-1 text-highlight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              href="/lobby"
+            >
+              skip
+            </CustomLink>
           )}
         </ScrollStatusTab>
         <main>
@@ -61,7 +66,7 @@ const Intro = ({
             slogan={welcomeSlogan}
           />
         </main>
-        <ScrollStatusTab fontColor="white">
+        <ScrollStatusTab>
           {scrollStatus}
           <ScrollStatusIndicator status={scrollStatus} />
         </ScrollStatusTab>
