@@ -1,6 +1,6 @@
 export default function Lobby() {
   return (
-    <div className="flex h-dvh min-h-svh w-full items-center justify-center text-center font-m-plus text-8xl text-white">
+    <div className="text-background-foreground flex min-h-dvh w-full items-center justify-center text-center font-m-plus text-8xl">
       Lobby
     </div>
   );

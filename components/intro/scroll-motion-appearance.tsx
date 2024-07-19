@@ -66,7 +66,7 @@ const ScrollMotionAppearance = ({
         style={{ opacity: opacityAppearance }}
       >
         <div className="absolute left-1/2 top-1/2 aspect-[4/5] w-40 -translate-x-1/2 -translate-y-1/2 md:w-60">
-          <div className="absolute -left-[36px] top-0 size-full rounded-[50%] border-[20px] border-bgc-dark transform-style-3d before:absolute before:size-full before:rounded-[50%] before:outline before:outline-[60px] before:outline-offset-[20px] before:outline-white after:absolute after:bottom-[-20px] after:right-0 after:h-[80px] after:w-[220px] after:bg-white after:translate-x-1/2 after:translate-y-full md:-left-[50px] md:-top-[6%] md:border-[30px] md:-translate-y-[3.4%] md:before:outline-[75px] md:before:outline-offset-[30px] md:after:bottom-[-30px]">
+          <div className="absolute -left-[36px] top-0 size-full rounded-[50%] border-[20px] border-background-dark transform-style-3d before:absolute before:size-full before:rounded-[50%] before:outline before:outline-[60px] before:outline-offset-[20px] before:outline-white after:absolute after:bottom-[-20px] after:right-0 after:h-[80px] after:w-[220px] after:bg-white after:translate-x-1/2 after:translate-y-full md:-left-[50px] md:-top-[6%] md:border-[30px] md:-translate-y-[3.4%] md:before:outline-[75px] md:before:outline-offset-[30px] md:after:bottom-[-30px]">
             <div className="absolute -bottom-[53px] left-1/2 transform-style-3d -translate-z-1 md:-bottom-[80px]">
               <m.div
                 style={{
@@ -126,9 +126,9 @@ const ScrollMotionAppearance = ({
             </div>
           </div>
         </div>
-        <div className="md-right-2 absolute -right-2 bottom-0">
+        <div className="absolute -right-2 bottom-0 md:right-0">
           <m.div
-            className="relative aspect-[246/274] w-[140px] md:w-[210px]"
+            className="relative aspect-[246/274] w-[140px] md:w-[207px]"
             style={{
               opacity: opacityAppearanceMan,
               translateX: translateAppearanceMan,

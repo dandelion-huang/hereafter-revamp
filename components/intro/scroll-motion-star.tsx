@@ -39,7 +39,7 @@ const ScrollMotionStar = ({
       >
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-x-[53%] -translate-y-1/2">
           <m.div
-            className="size-full rounded-full bg-bgc-dark [clip-path:polygon(48%_48%,_100%_48%,_100%_100%,_48%_100%)]"
+            className="size-full rounded-full bg-background-dark [clip-path:polygon(48%_48%,_100%_48%,_100%_100%,_48%_100%)]"
             style={{
               scale: scaleStarMask,
             }}
@@ -47,7 +47,7 @@ const ScrollMotionStar = ({
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-y-1/2 translate-x-[43%]">
           <m.div
-            className="size-full rounded-full bg-bgc-dark [clip-path:polygon(0_48%,_52%_48%,_52%_100%,_0_100%)]"
+            className="size-full rounded-full bg-background-dark [clip-path:polygon(0_48%,_52%_48%,_52%_100%,_0_100%)]"
             style={{
               scale: scaleStarMask,
             }}
@@ -55,7 +55,7 @@ const ScrollMotionStar = ({
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro -translate-x-[53%] translate-y-[39%]">
           <m.div
-            className="size-full rounded-full bg-bgc-dark [clip-path:polygon(48%_0,_100%_0,_100%_52%,_48%_52%)]"
+            className="size-full rounded-full bg-background-dark [clip-path:polygon(48%_0,_100%_0,_100%_52%,_48%_52%)]"
             style={{
               scale: scaleStarMask,
             }}
@@ -63,7 +63,7 @@ const ScrollMotionStar = ({
         </div>
         <div className="absolute aspect-[160/165] w-40 animate-shine-intro translate-x-[43%] translate-y-[39%]">
           <m.div
-            className="size-full rounded-full bg-bgc-dark [clip-path:polygon(0_0,_52%_0,_52%_52%,_0_52%)]"
+            className="size-full rounded-full bg-background-dark [clip-path:polygon(0_0,_52%_0,_52%_52%,_0_52%)]"
             style={{
               scale: scaleStarMask,
             }}
