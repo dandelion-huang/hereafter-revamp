@@ -13,7 +13,7 @@ import { ScrollMotionTime } from '@/components/intro/scroll-motion-time';
 import { ScrollMotionWelcome } from '@/components/intro/scroll-motion-welcome';
 import { ScrollStatusIndicator } from '@/components/intro/scroll-status-indicator';
 import { ScrollStatusTab } from '@/components/intro/srcoll-status-tab';
-import { CustomLink } from '@/components/ui/link';
+import { Link } from '@/components/ui/link';
 import { useScrollStatus } from '@/hooks/use-scroll-status';
 
 const loadFeatures = () =>
@@ -46,12 +46,14 @@ const Intro = ({
       <LazyMotion features={loadFeatures} strict>
         <ScrollStatusTab position="top">
           {scrollStatus === 'scroll' && (
-            <CustomLink
-              className="-mr-2 -mt-1 px-2 py-1 text-highlight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            <Link
+              className="-mx-3 -mt-3"
               href="/lobby"
+              size="sm"
+              variant="link"
             >
               skip
-            </CustomLink>
+            </Link>
           )}
         </ScrollStatusTab>
         <main>
