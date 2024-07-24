@@ -3,7 +3,9 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.prettier": "explicit",
     "source.fixAll.stylelint": "explicit",
-    "source.fixAll.markdownlint": "explicit"
+    "source.fixAll.markdownlint": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
   },
   "i18n-ally.displayLanguage": "en-US",
   "i18n-ally.keystyle": "nested",
