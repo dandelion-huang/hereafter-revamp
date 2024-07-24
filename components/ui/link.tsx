@@ -1,22 +1,30 @@
-import Link, { type LinkProps } from 'next/link';
+import { type VariantProps } from 'class-variance-authority';
+import {
+  Link as AriaLink,
+  type LinkProps as AriaLinkProps,
+} from 'react-aria-components';
 
-interface CustomLinkProps extends LinkProps {
-  children?: React.ReactNode;
-  className?: string;
-}
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/utils/misc';
 
-const CustomLink = ({
-  children,
-  className,
-  href,
-  ...props
-}: CustomLinkProps) => {
+interface LinkProps
+  extends AriaLinkProps,
+    VariantProps<typeof buttonVariants> {}
+
+const Link = ({ className, variant, size, ...props }: LinkProps) => {
   return (
-    <Link className={className} href={href} prefetch={false} {...props}>
-      {children}
-    </Link>
+    <AriaLink
+      className={cn(
+        buttonVariants({
+          variant,
+          size,
+          className,
+        })
+      )}
+      {...props}
+    />
   );
 };
 
-export { CustomLink };
-export type { CustomLinkProps };
+export { Link };
+export type { LinkProps };
