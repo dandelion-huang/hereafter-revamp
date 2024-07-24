@@ -26,23 +26,24 @@ Node.js 版本：20.14.0
 
 這部分覺得寫成中文反而會比較難懂，故以英文書寫。
 
-- **Next.js**: full-stack framework
-- **TypeScript**: type checking
-- **ZOD**: runtime validation
-- **i18next & React-i18next**: internationalization (i18n)
+- **next**: full-stack framework
+- **typescript**: type checking
+- **zod**: runtime validation
+- **i18next & react-i18next**: internationalization (i18n)
 - **cookies-next**: universal cookie handling
 - **next-themes**: theming
 - **framer-motion**: animation
 - **class-variance-authority**: creating variants
-- **Tailwind CSS and tailwindcss-3d**: styling
-- **PostCSS and Autoprefixer**: post-processing CSS
-- **ESLint**: linting
-- **Prettier**: code formatting
-- **Husky**: git hooks
-- **Commitlint**: commit message linting (conventional commits)
-- **MarkdownLint**: markdown linting
-- **Stylelint & stylelint-order**: style linting
-- **SVGO**: SVG optimization
+- **shadcn/ui, radix-ui & react-aria**: accessible ui components
+- **tailwindcss and tailwindcss-3d**: styling
+- **postcss and autoprefixer**: post-processing CSS
+- **eslint**: linting
+- **prettier**: code formatting
+- **husky**: git hooks
+- **commitlint**: commit message linting (conventional commits)
+- **markdownlint**: markdown linting
+- **stylelint & stylelint-order**: style linting
+- **svgo**: SVG optimization
 - **@next/bundle-analyzer**: bundle size analysis
 - **@vercel/analytics**: web analytics collecting
 - **@vercel/speed-insights**: speed insights analysis
@@ -75,6 +76,7 @@ Node.js 版本：20.14.0
 
 - [Excalidraw](https://excalidraw.com/)
 - [ChatGPT](https://chatgpt.com/)
+- [Claude](https://claude.ai/new)
 - [Vercel](https://vercel.com/)
 - [JSBEN.CH](https://jsben.ch/)
 - [jsPerf.app](https://jsperf.app/)
@@ -89,3 +91,4 @@ Node.js 版本：20.14.0
 - [lcl.host](https://lcl.host/)
 - [Certbot](https://certbot.eff.org/)
 - [Bundlephobia](https://bundlephobia.com/)
+- [JollyUI](https://www.jollyui.dev/)

@@ -4,6 +4,33 @@
 
 或許應該說是開發日誌比較妥適。
 
+## 2024-07-21
+
+- 使用 react-aria 來製作 accessible ui components。
+  > 我一直想做一個 shadcn-ui + react-aria 的 component library，這部分參考了 [JollyUI](https://www.jollyui.dev/) 並簡化。
+  - 使用 react-aria 的 i18nProvider 來為不可見內容提供翻譯，將其包裝為 component `AppI18nProvider`。
+    > [Server Side Rendering – React Aria](https://react-spectrum.adobe.com/react-aria/ssr.html)
+    > 關於上述連結的 Advanced optimization 部分，日後會再處理，畢竟目前連 datepicker 都還沒有實作到。
+  - 由於 react-aria 有自己的 `<Link>`，也包裝了一個 component `AppRouterProvider`。
+    > [Client Side Routing – React Aria](https://react-spectrum.adobe.com/react-aria/routing.html)
+  - 將 component `CustomLink` 改名為 `Link`，並移動到 components/ui 資料夾中統一管理。
+- 完成了 component `Button` 並修改 component `Link`。
+  > 透過 component `Button` 來包裝 component `Link`，優化了 intro skip tab 的 accessibility。
+- 希望網頁速度再快一點，先減少 font.ts 中引入的字級數量。
+
+## 2024-07-16
+
+- 將 type 都抽出來統一放在 types 資料夾中。
+- 統一了一下 file naming rule：只使用 kebab-case。
+  > 雖然有時候還是覺得 hooks 不用 camelCase 很怪，但還是希望有一個統一的命名系統（這樣就可以不要再花心思在這件事情上）。
+- 由於原專案在 theming 上：
+  - intro page 只接受 light theme。
+  - nextlife page 只接受 dark theme。
+  - 因此透過 middleware 把 route segment 放入 `response` `header` 中讓前端可以取得。
+    > 這是一個暫時性的有點 hack 的處理方式，靜待官方支援更好的在 server side 取得 pathname 的方式。
+- 接續前一點，新增了一個 custom hook `useTheme` 來限縮 `theme` 只能是 `light | dark`。
+- 使用 shadcn-ui 當 component library basis（透過 radix-ui 的概念）。
+
 ## 2024-07-14
 
 - 調整了 intro page 中 place 和 appearance 的排版，讓 mobile 版的視覺體驗更好。
@@ -19,8 +46,7 @@
   - 調整了 intro page welcome banner 中的 DOM 結構來避免 non-composited css animations。
   - 關於 reduce unused css 以及 failed to find font override 的問題：
     > 這兩個問題應該可以等官方修復。
-    > ref: [How to fix link preload warning in Next.js app? · vercel/next.js · Discussion #49607 · GitHub](https://github.com/vercel/next.js/discussions/49607)
-    > ref: [[NEXT-1192] Failed to find font override - next/font/google · Issue #47115 · vercel/next.js](https://github.com/vercel/next.js/issues/47115)
+    > [How to fix link preload warning in Next.js app? · vercel/next.js · Discussion #49607 · GitHub](https://github.com/vercel/next.js/discussions/49607) > [[NEXT-1192] Failed to find font override - next/font/google · Issue #47115 · vercel/next.js](https://github.com/vercel/next.js/issues/47115)
   - metadata 相關：
     - 修正 `authors` 誤植為 `author` 的問題。
     - 修正 `openGraph` 的 `images` 設置錯誤的問題。
@@ -29,7 +55,7 @@
   - SEO 相關：
     > 先開出 lobby page 以避免 best practices 部分被扣分。
 - 利用將 `motion` 改為 `m` 並配合 `LazyMotion` 來減少 framer-motion 的 bundle size。
-  > ref: [Reduce bundle size | Framer for Developers](https://www.framer.com/motion/guide-reduce-bundle-size/)
+  > [Reduce bundle size | Framer for Developers](https://www.framer.com/motion/guide-reduce-bundle-size/)
   > /[locale] - 60.3 kB -> 35.1 kB
   > other shared chunks (total) - 1.92 -> 1.99 kB
 - 實作了一個 component `CustomLink` 來封裝 Next.js `Link` 並預設提供 `prefetch={false}`。
@@ -42,7 +68,7 @@
 
 - 將 pnpm 升級到 9.5.0。
 - 將 dvh 高度單位改為使用 svh 來讓 mobile 版在上下反覆滑動時有更好的體驗。
-  > ref: [stackoverflow](https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser?page=2&tab=scoredesc)
+  > [The large, small, and dynamic viewport units | Blog | web.dev](https://web.dev/blog/viewport-units) > [stackoverflow](https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser?page=2&tab=scoredesc)
 - 調整了 component `ScrollStatus` 在 `useEffect` 中的條件判斷，讓 `end` 狀態更容易觸發。
 - 使用 tailwindcss-3d 來簡化 tailwindcss 的寫法。
   > 主要也是為了修復下一點的問題，希望程式碼更簡潔。
@@ -61,7 +87,15 @@
   > 不需要同時使用 `role="presentation"` 和 `aria-hidden="true"`。
   > 可以在初版完成後再考慮回來完善 accessibility。
 - intro page 的最後一個部分 welcome banner，考慮了很久都覺得因為文案的關係，原版的排版在 RWD 上找不到妥善的方案，因此直接調整排版。
-  > 這部分的排版等做完 component `Button` 後還會回來調整，因為 intro page 進入 lobby page 的 ui 都會使用到。
+  > DONE: 這部分的排版等做完 component `Button` 後還會回來調整，因為 intro page 進入 lobby page 的 ui 都會使用到。
+  > 關於 component/intro 裡面還是有一個 intro.tsx 而非 index.tsx 的狀況，單純是不希望有一大堆同名的 index.tsx 在專案中。所以雖然引用的時候會寫得比較長，但我覺得只要符合規範就是好事。
+  > 如果還是習慣使用 index.tsx 的話，可以透過以下的 vscode settings 處理。
+
+```json
+"workbench.editor.customLabels.patterns": {
+  "**/index.*": "${dirname} (index)"
+},
+```
 
 ## 2024-06-30
 
@@ -92,7 +126,7 @@
 
 ## 2024-04-28
 
-- 由於 Next.js 是一個全端框架，盡量用 Next.js 生態系來處理。
+- 由於 next 是一個全端框架，盡量用 next 生態系來處理。
   > 有機會的話想要把後端改成用 Rust 生態系的 actix-web。但因為使用者對 100ms 以下的延遲不會很敏感，有機會才會做這個改動。
 - 盡量改成使用 tailwindcss，因此排版方式可能會和原版本不盡相同。
 - tailwindcss 裡面可以用 dark mode (`dark:`) 來切換配色主題（theme），這種做法有些缺點：
