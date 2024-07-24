@@ -37,7 +37,7 @@ const IntroWording = ({
   return (
     <div className={cn(introWordingVariants({ vertical, className }))}>
       <m.div
-        className="container whitespace-pre-line text-center font-semibold tracking-widest text-white sm:text-lg md:text-left md:text-2xl lg:px-16 xl:text-4xl"
+        className="container whitespace-pre-line text-center tracking-widest text-white sm:text-lg md:text-left md:text-2xl lg:px-16 xl:text-4xl"
         style={{
           opacity,
           translateY,

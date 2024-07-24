@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/utils/misc';
 
-const scrollStatusTabVariants = cva('fixed z-50 w-full font-semibold', {
+const scrollStatusTabVariants = cva('fixed z-50 w-full', {
   variants: {
     position: {
       bottom: 'bottom-8',
