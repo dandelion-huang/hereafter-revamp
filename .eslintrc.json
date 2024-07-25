@@ -19,6 +19,7 @@
   "plugins": [
     "prettier",
     "import",
+    "unused-imports",
     "@typescript-eslint",
     "react",
     "react-hooks"
@@ -38,10 +39,7 @@
         "default": "array"
       }
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      { "argsIgnorePattern": "^_" }
-    ],
+    "@typescript-eslint/no-unused-vars": "off",
     "import/no-unused-modules": "error",
     "import/order": [
       "error",
@@ -100,6 +98,16 @@
         "ignoreCase": true,
         "ignoreDeclarationSort": true,
         "allowSeparatedGroups": true
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
       }
     ]
   }
