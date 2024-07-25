@@ -8,10 +8,11 @@
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && pnpm lint:all",
     "eslint:fix": "eslint --fix",
     "prettier:write": "prettier --write --cache",
     "stylelint:fix": "stylelint --fix",
+    "lint:all": "pnpm eslint **/*.{js,jsx,ts,tsx} && pnpm stylelint **/*.css && pnpm markdownlint **/*.md && pnpm prettier **/*.{js,jsx,ts,tsx,json,css,md}",
     "svgo": "svgo -f public/assets-src/svg-src -o public/assets-src"
   },
   "config": {
