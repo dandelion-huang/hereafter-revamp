@@ -5,14 +5,13 @@ import { dir } from 'i18next';
 import { type Metadata } from 'next';
 import { headers } from 'next/headers';
 
-import { mPlusRounded1c, notoSans, notoSansTC } from '@/app/fonts';
+import { notoSans } from '@/app/fonts';
 import { AppI18nProvider } from '@/components/context/i18n';
 import { AppRouterProvider } from '@/components/context/router';
 import { AppThemeProvider } from '@/components/context/theme';
 import { useTranslation as serverSideTranslation } from '@/i18n';
 import { i18nConfig } from '@/i18n/config';
 import defaultMetadata from '@/i18n/locales/en-US/metadata.json';
-import { isTwLocale } from '@/schemas/locale-schema';
 import { parseTheme } from '@/schemas/theme-schema';
 import { type Locale } from '@/types/i18n';
 import { cn } from '@/utils/misc';
@@ -80,13 +79,7 @@ export default function AppLayout({
       lang={locale}
       suppressHydrationWarning
     >
-      <body
-        className={cn(
-          notoSans.variable,
-          mPlusRounded1c.variable,
-          isTwLocale(locale) && notoSansTC.variable
-        )}
-      >
+      <body className={cn(notoSans.variable)}>
         <AppRouterProvider>
           <AppThemeProvider attribute="class" defaultTheme={theme}>
             <AppI18nProvider locale={locale}>{children}</AppI18nProvider>
