@@ -81,6 +81,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unused-imports": "^3.2.0",
     "husky": "^9.1.1",
     "inquirer": "^9.3.5",
     "lint-staged": "^15.2.7",
