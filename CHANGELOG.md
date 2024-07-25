@@ -4,6 +4,23 @@
 
 或許應該說是開發日誌比較妥適。
 
+## 2024-07-25
+
+- 現在的趨勢是盡量不要使用 pre-commit hooks，盡量在 CI/CD 中做這件事才是對的。
+  - pre-commit hooks 破壞了工程師在本地端以自己習慣的方式工作的方式。
+    > 如果 IDE 有正確的設定，其實並不需要在 pre-commit hooks 做 linting check。
+  - pre-commit hooks 少數必要的用法可能是用來檢查有沒有 leak sensitive information。
+    > 我自己還是覺得可以使用來檢查一些 commit message 是否符合規範，但希望 testing 等都是在 CI 中做。
+  - CI 中必須再 linting check 一次以確保正式環境的程式碼品質。
+- 使用 eslint-plugin-unused-imports 來檢查並刪去未使用的 import。
+  > 也有同步更新 .vscode/settings.json 中的相關設定，如果 IDE 沒有正確作用才會在 lint-staged 檢查。
+- 透過 GitHub Actions 來實作 CI/CD。
+- 將 pnpm 升級到 9.6.0。
+  > 看到關於使用 passkeys 來實作第三方登入 （Arm TrustZone）的討論，日後實作第三方登入的時候再實作。
+  > https://www.hanko.io/blog/passkeys-nextjs-nextauth
+- 撰寫了初版的 GitHub workflow。
+- 在 fonts.ts 中再度簡化了所有頁面使用到的 font-weight 並只保留需要的。
+
 ## 2024-07-21
 
 - 使用 react-aria 來製作 accessible ui components。

@@ -14,10 +14,10 @@
 
 ## 開發環境（Environment）
 
-> pnpm version: 9.5.0  
+> pnpm version: 9.6.0  
 > Node.js version: 20.14.0
 
-pnpm 版本：9.5.0  
+pnpm 版本：9.6.0  
 Node.js 版本：20.14.0
 
 ## 技術選擇和工具（Skill Stack and Tools）
@@ -91,4 +91,5 @@ Node.js 版本：20.14.0
 - [lcl.host](https://lcl.host/)
 - [Certbot](https://certbot.eff.org/)
 - [Bundlephobia](https://bundlephobia.com/)
+- [nektos/act: Run your GitHub Actions locally](https://nektosact.com/)
 - [JollyUI](https://www.jollyui.dev/)
