@@ -78,12 +78,8 @@ const config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        'noto-sans': [
-          'var(--font-noto-sans)',
-          'var(--font-noto-sans-tc)',
-          ...fontFamily.sans,
-        ],
-        'm-plus': ['var(--font-m-plus-rounded-1c)', ...fontFamily.sans],
+        'noto-sans': ['var(--font-noto-sans)', ...fontFamily.sans],
+        'm-plus': ['var(--font-m-plus-rounded-1c-medium)', ...fontFamily.sans],
       },
       keyframes: {
         'accordion-down': {
